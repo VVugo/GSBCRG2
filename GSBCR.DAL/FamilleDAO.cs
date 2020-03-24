@@ -11,16 +11,38 @@ namespace GSBCR.DAL
 {
     public class FamilleDAO
     {
-        public FAMILLE FindById(string code)
+        /// <summary>
+        /// Permet de rechercher une famille de médicament par son nom
+        /// </summary>
+        /// <param name="FAM_LIBELLE">Libelle d'une famille</param>
+        /// <returns>FAMILLE</returns>
+        public FAMILLE FindById(string libelleFamille)
         {
-            //A faire : rechercher une famille de médicaments par son nom
-            return null;
+            FAMILLE fam = null;
+            using ( var context = new GSB_VisiteEntities())
+            {
+                var req = from f in context.FAMILLEs.Include("LesMedicaments")
+                          where f.FAM_LIBELLE.Contains(libelleFamille)
+                          select f;
+                fam = req.SingleOrDefault<FAMILLE>();
+            }
+            return fam;
         }
 
+        /// <summary>
+        /// Permet de charger toutes les familles de médicaments
+        /// </summary>
+        /// <returns>FAMILLE</returns>
         public List<FAMILLE> FindAll()
         {
-            //A faire : charger toutes les familles de médicaments
-            return null;
+            List<FAMILLE> fam = null;
+            using( var context = new GSB_VisiteEntities())
+            {
+                var req = from f in context.FAMILLEs.Include("LesMedicaments")
+                          select f;
+                fam = req.ToList<FAMILLE>();
+            }
+            return fam;
         }
 
     }

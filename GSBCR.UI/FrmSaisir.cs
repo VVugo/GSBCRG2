@@ -308,5 +308,18 @@ namespace GSBCR.UI
             }
             return ok;
         }
+        /*private void txtAutre_Validating(object sender, CancelEventArgs)
+        {
+            if(cbxMotif.SelectedValue.ToString() == "AU" && string.Is)
+            {
+                errorProvider1.SetError(this.txtAutre, "obligatoire");
+                e.Cancel = true;
+            }
+            else
+            {
+                errorProvider1.SetError(this.txtAutre, "");
+                e.Cancel = false;
+            }
+        }*/
     }
 }

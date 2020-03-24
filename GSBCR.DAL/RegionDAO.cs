@@ -13,14 +13,29 @@ namespace GSBCR.DAL
     {
         public REGION FindById(string code)
         {
-            //A faire : rechercher une région par son nom
-            return null;
+            //Rechercher une région par son nom
+            REGION reg = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                var req = from r in context.REGIONs.Include("LeSecteur")
+                          where r.REG_NOM.Contains(code)
+                          select r;
+                reg = req.SingleOrDefault<REGION>();
+            }
+            return reg;
         }
 
         public List<REGION> FindAll()
         {
-            //A faire : charger toutes les régions
-            return null;
+            //Charger toutes les régions
+            List<REGION> reg = null;
+            using ( var context = new GSB_VisiteEntities())
+            {
+                var req = from r in context.REGIONs.Include("LeSecteur")
+                          select r;
+                reg = req.ToList<REGION>();
+            }
+            return reg;
         }
     }
 }

@@ -14,8 +14,16 @@ namespace GSBCR.DAL
     {
         public MOTIF_VISITE FindById(string code)
         {
-            //A faire : rechercher un motif visite par son nom
-            return null;
+            //Rechercher un motif visite par son nom
+            MOTIF_VISITE lmv = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                var req = from m in context.MOTIF_VISITE.Include("LesRapports")
+                          where m.MOT_LIBEL == code
+                          select m;
+                lmv = req.SingleOrDefault<MOTIF_VISITE>();
+            }
+            return lmv;
         }
 
         public List<MOTIF_VISITE> FindAll()
@@ -25,7 +33,7 @@ namespace GSBCR.DAL
             {
                 //désactiver le chargement différé
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from m in context.MOTIF_VISITE
+                var req = from m in context.MOTIF_VISITE.Include("LesRapports")
                           select m;
                 lmv = req.ToList<MOTIF_VISITE>();
 

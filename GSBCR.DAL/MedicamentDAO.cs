@@ -20,7 +20,7 @@ namespace GSBCR.DAL
             {
                 //désactiver le chargement différé
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from m in context.MEDICAMENTs.Include("laFamille")
+                var req = from m in context.MEDICAMENTs.Include("LaFamille")
                           where m.MED_DEPOTLEGAL == depot
                           select m;
                 med = req.SingleOrDefault<MEDICAMENT>();
@@ -37,7 +37,7 @@ namespace GSBCR.DAL
             {
                 //désactiver le chargement différé
                 //context.Configuration.LazyLoadingEnabled = false;
-                var req = from m in context.MEDICAMENTs.Include("laFamille")
+                var req = from m in context.MEDICAMENTs.Include("LaFamille")
                           select m;
                 meds = req.ToList<MEDICAMENT>();
 
@@ -48,8 +48,16 @@ namespace GSBCR.DAL
 
         public List<MEDICAMENT> FindByFamille(string code)
         {
-            //A faire : charger tous les médicaments d'une famille
-            return null;
+            //charger tous les médicaments d'une famille
+            List<MEDICAMENT> meds = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                var req = from m in context.MEDICAMENTs.Include("LaFamille")
+                          where m.FAM_CODE == code
+                          select m;
+                meds = req.ToList<MEDICAMENT>();
+            }
+                return meds;
         }
     }
 }
