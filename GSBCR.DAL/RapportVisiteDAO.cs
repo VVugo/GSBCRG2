@@ -34,6 +34,41 @@ namespace GSBCR.DAL
             return rv;
 
         }
+
+        /// <summary>
+        /// Permet de créer une liste avec tous les rapports de visite de visiteurs qui ont un certain état et une certaine région
+        /// </summary>
+        /// <param name="codeRegion">Code de la régions (string)</param>
+        /// <param name="lesEtats">Liste d'états (int)</param>
+        /// <returns></returns>
+        public List<RAPPORT_VISITE> FindByEtatEtRegion(List<int> lesEtats, string codeRegion)
+        {
+            List<RAPPORT_VISITE> lesRapports = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                int i = 0;
+                string reqStr = "select * from RAPPORT_VISITE r";
+                reqStr += " INNER JOIN VISITEUR v ON r.RAP_MATRICULE = v.VIS_MATRICULE";
+                reqStr += " INNER JOIN VAFFECTATION ON v.VIS_MATRICULE = vaf.VIS_MATRICULE";
+                reqStr += " INNER JOIN REGION reg ON vaf.REG_CODE = reg.REG_CODE";
+                reqStr += " where r.RAP_MATRICULE = " + codeRegion;
+                reqStr += " and r.RAP_ETAT in(";
+                i = 0;
+                foreach (int e in lesEtats)
+                {
+                    if (i != 0)
+                        reqStr += ",";
+                    else
+                        i++;
+                    reqStr += e;
+                }
+                reqStr += ")";
+                lesRapports = context.RAPPORT_VISITE.SqlQuery(reqStr).ToList<RAPPORT_VISITE>();
+
+            }
+            return lesRapports;
+        }
+
         /// <summary>
         /// Permet de créer une liste avec tous les rapports de visite de visiteurs qui ont un certain état
         /// </summary>

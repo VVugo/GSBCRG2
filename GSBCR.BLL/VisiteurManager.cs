@@ -25,6 +25,7 @@ namespace GSBCR.BLL
                 return null;
 
         }
+
         /// <summary>
         /// Permet de charger la dernière affectation du visiteur
         /// et donc son profil (visiteur, délégué, responsabe secteur) et sa région
@@ -36,6 +37,7 @@ namespace GSBCR.BLL
             VAFFECTATION vaff = new VaffectationDAO().FindByMatricule(matricule);
             return vaff;
         }
+
         /// Permet de charger les rapports non terminés du visiteur (état 1)
         /// </summary>
         /// <param name="m">matricule Visiteur</param>
@@ -50,6 +52,7 @@ namespace GSBCR.BLL
             lr = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
             return lr;
         }
+
         /// Permet de charger un rapport de visite
         /// </summary>
         /// <param name="m">matricule Visiteur</param>
@@ -60,15 +63,24 @@ namespace GSBCR.BLL
             RAPPORT_VISITE r = new RapportVisiteDAO().FindById(m, n);
             return r;
         }
+
         /// Permet de charger les rapports terminés du visiteur (état 2 et 3) 
         /// </summary>
         /// <param name="m">matricule Visiteur</param>
         /// <returns>List<RAPPORT_VISITE>/returns>
         public static List<RAPPORT_VISITE> ChargerRapportVisiteurFinis(String m)
         {
-            //A faire : charger les rapports terminés (état = 2 ou 3) du visiteur
-            return null;
+            //Charger les rapports terminés (état = 2 ou 3) du visiteur
+            List<RAPPORT_VISITE> rv;
+            List<string> lm = new List<string>();
+            lm.Add(m);
+            List<int> le = new List<int>();
+            le.Add(2);
+            le.Add(3);
+            rv = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
+            return rv;
         }
+
         /// <summary>
         /// Permet de retourner une liste de visiteurs pour un région à partir de vaffectation
         /// </summary>
@@ -86,26 +98,35 @@ namespace GSBCR.BLL
             }
             return lv;
         }
-    /// Permet de charger les rapports non consultés (état 2) des visiteurs d'une région  
-    /// </summary>
-    /// <param name="code">code région</param>
-    /// <returns>List<RAPPORT_VISITE>/returns>
-    public static List<RAPPORT_VISITE> ChargerRapportRegionNonLus(String code)
-        {
-            //A faire : charger les rapports terminés et non lus (état = 2 ) des visiteurs d'une région
 
-            return null;
+        /// Permet de charger les rapports non consultés (état 2) des visiteurs d'une région  
+        /// </summary>
+        /// <param name="code">code région</param>
+        /// <returns>List<RAPPORT_VISITE>/returns>
+        public static List<RAPPORT_VISITE> ChargerRapportRegionNonLus(string code)
+        {
+            //Charger les rapports terminés et non lus (état = 2 ) des visiteurs d'une région
+            List<RAPPORT_VISITE> lr;
+            List<int> le = new List<int>();
+            le.Add(2);
+            lr = new RapportVisiteDAO().FindByEtatEtRegion(le, code);
+            return lr;
         }
+    
         /// Permet de charger les rapports terminés et consultés (état 3) des visiteurs d'une région 
         /// </summary>
         /// <param name="r">code région</param>
         /// <returns>List<RAPPORT_VISITE>/returns>
-        public static List<RAPPORT_VISITE> ChargerRapportRegionLus(String r)
+        public static List<RAPPORT_VISITE> ChargerRapportRegionLus(string code)
         {
-            //A faire : charger les rapports terminés (état = 3) des visiteurs d'une région
-
-            return null;
+            // Charger les rapports terminés (état = 3) des visiteurs d'une région
+            List<RAPPORT_VISITE> lr;
+            List<int> le = new List<int>();
+            le.Add(3);
+            lr = new RapportVisiteDAO().FindByEtatEtRegion(le, code);
+            return lr;
         }
+
         /// <summary>
         /// Permet de créer un rapport dans la base de données 
         /// </summary>
@@ -149,6 +170,7 @@ namespace GSBCR.BLL
             MEDICAMENT l = new MedicamentDAO().FindById(depot);
             return l;
         }
+
         /// <summary>
         /// Permet de charger tous les médicaments
         /// </summary>
@@ -157,6 +179,7 @@ namespace GSBCR.BLL
             List<MEDICAMENT> lm = new MedicamentDAO().FindAll();
             return lm;
         }
+
         /// <summary>
         /// Permet de charger tous les motifs visite
         /// </summary>
@@ -165,6 +188,7 @@ namespace GSBCR.BLL
             List<MOTIF_VISITE> lm = new MotifVisiteDAO().FindAll();
             return lm;
         }
+
         /// <summary>
         /// Permet de charger tous les praticiens
         /// </summary>
@@ -173,13 +197,16 @@ namespace GSBCR.BLL
             List<PRATICIEN> lp = new PratricienDAO().FindAll();
             return lp;
         }
+
         /// <summary>
         /// Permet de charger un praticien à partir de son numéro
         /// <param name="pranum">entier</param>
         /// </summary>
         public static PRATICIEN ChargerLePraticien(Int16 pranum)
         {
-            return null;
+            //Charger un praticien via son numéro
+            PRATICIEN pra = new PratricienDAO().FindById(pranum);
+            return pra;
         }
     }
 }
