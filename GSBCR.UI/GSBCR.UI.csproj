@@ -109,6 +109,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmConnexion.resx">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuVisiteur.resx">
       <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
     </EmbeddedResource>

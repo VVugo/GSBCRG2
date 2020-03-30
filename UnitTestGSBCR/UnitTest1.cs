@@ -20,8 +20,10 @@ namespace UnitTestGSBCR
         [TestMethod]
         public void TestChargerAffectationVisiteur()
         {
-            VAFFECTATION vaf = VisiteurManager.ChargerAffectationVisiteur("a131");
-            Assert.AreEqual("27/05/1996 00:00:00", vaf.JJMMAA, "L'affectation de a131 n'est pas la dernière");
+            VAFFECTATION vaff = VisiteurManager.ChargerAffectationVisiteur("a131");
+            Assert.AreEqual("a131", vaff.VIS_MATRICULE , "le rapport n'appartient pas au matricule a131");
+            DateTime expect = new DateTime(1996, 05, 27, 00, 00, 00);
+            Assert.AreEqual(expect, vaff.JJMMAA, "le rapport n'est pas de la bonne date");
         }
 
         [TestMethod]
@@ -31,7 +33,7 @@ namespace UnitTestGSBCR
             List<RAPPORT_VISITE> lr = VisiteurManager.ChargerRapportVisiteurEncours("a131");
             foreach (RAPPORT_VISITE r in lr)
             {
-                Assert.AreEqual("a131", r.RAP_MATRICULE, "le rapport n''appartient pas au matricule a131");
+                Assert.AreEqual("a131", r.RAP_MATRICULE, "le rapport n'appartient pas au matricule a131");
                 Assert.AreEqual("1", r.RAP_ETAT, "état rapport différent de en cours (1)");
                 ok = (r.RAP_NUM >= 57 && r.RAP_NUM <= 62);
                 Assert.IsTrue(ok, "n° de rapport faux");
@@ -47,26 +49,14 @@ namespace UnitTestGSBCR
 
         [TestMethod]
         public void TestChargerRapportVisiteurFinis()
-        {
-            bool ok = false;
+        {            
             List<RAPPORT_VISITE> lr = VisiteurManager.ChargerRapportVisiteurFinis("a131");
             foreach (RAPPORT_VISITE r in lr)
             {
-                Assert.AreEqual("a131", r.RAP_MATRICULE, "le rapport n''appartient pas au matricule a131");
-                Assert.AreEqual("2", r.RAP_ETAT, "état rapport différent de non lus (2)");
-               //Assert.AreEqual("3", r.RAP_ETAT, "état rapport différent de terminé (3)");
-                ok = (r.RAP_NUM >= 57 && r.RAP_NUM <= 62);
-                Assert.IsTrue(ok, "n° de rapport faux");
+                Assert.AreEqual("a131", r.RAP_MATRICULE, "le rapport n'appartient pas au matricule a131");
+                Assert.AreNotEqual("1", r.RAP_ETAT, "état rapport différent de terminé et non lus (2 & 3)");
+                
             }
         }
-
-        [TestMethod]
-        public void TestChargerVisiteurByRegion()
-        {
-            List<VISITEUR> lv = VisiteurManager.ChargerVisiteurByRegion("BN");
-        }
-
-        
-    
     }
 }

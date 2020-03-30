@@ -32,26 +32,19 @@ namespace GSBCR.UC
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UcPraticien_Load(object sender, EventArgs e)
-        {
-
-        }
+     
         private void ucPraticien_actualiser()
         {
-            txtNumero.Text = lePraticien.PRA_NUM.ToString();
             txtNom.Text = lePraticien.PRA_NOM;
             txtPrenom.Text = lePraticien.PRA_PRENOM;
             txtAdresse.Text = lePraticien.PRA_ADRESSE;
             txtCp.Text = lePraticien.PRA_CP;
             txtVille.Text = lePraticien.PRA_VILLE;
             txtCoefNot.Text = lePraticien.PRA_COEFNOTORIETE.ToString();
-            txtType.Text = lePraticien.TYP_CODE;
+            txtType.Text = lePraticien.LeType.TYP_LIBELLE;
 
         }
+
+
     }
 }

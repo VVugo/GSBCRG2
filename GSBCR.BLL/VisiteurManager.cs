@@ -75,8 +75,7 @@ namespace GSBCR.BLL
             List<string> lm = new List<string>();
             lm.Add(m);
             List<int> le = new List<int>();
-            le.Add(2);
-            le.Add(3);
+            le.AddRange(new int[] { 2, 3 });
             rv = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
             return rv;
         }
