@@ -71,6 +71,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmConnexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConnexion.Designer.cs">
+      <DependentUpon>FrmConnexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsulterPraticien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsulterPraticien.Designer.cs">
+      <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenuVisiteur.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,12 @@
     </Compile>
     <Compile Include="FrmRapportEnCours.Designer.cs">
       <DependentUpon>FrmRapportEnCours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRapportValide.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRapportValide.Designer.cs">
+      <DependentUpon>FrmRapportValide.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSaisir.cs">
       <SubType>Form</SubType>
