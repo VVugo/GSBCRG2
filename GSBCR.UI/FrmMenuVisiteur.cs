@@ -13,22 +13,19 @@ namespace GSBCR.UI
 {
     public partial class FrmMenuVisiteur : Form
     {
-        private VISITEUR leVisiteur;
         private VAFFECTATION leProfil;
-        public FrmMenuVisiteur()
+        private VISITEUR leVisiteur;
+
+        public FrmMenuVisiteur(VISITEUR v)
         {
+            string matricule = v.VIS_MATRICULE;
+            string mdp = v.vis_mdp;
             InitializeComponent();
             // chargement du visiteur connecté et de son profil
             try
             {
-                //le visiteur doit être passé en paramètre par le menu de connexion
-                //Ici initialiser le visiteur en dur
-                //visiteur
-                leVisiteur = VisiteurManager.ChargerVisiteur("a131", "30BFD069");
-                //délégue
-                //leVisiteur = VisiteurManager.ChargerVisiteur("r58", "secret18");
-                //responsable
-                //leVisiteur = VisiteurManager.ChargerVisiteur("r24", "secret18");
+                //Charge l'utilisateur
+                leVisiteur = VisiteurManager.ChargerVisiteur(matricule, mdp);
                 leProfil = VisiteurManager.ChargerAffectationVisiteur(leVisiteur.VIS_MATRICULE);
                 if (leProfil.TRA_ROLE == "Délégué")
                 {
@@ -88,6 +85,19 @@ namespace GSBCR.UI
             {
                 MessageBox.Show("Aucun rapport en cours", "Gestion Rapports de visite", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void modifierConsulterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            FrmInfoPerso f = new FrmInfoPerso(leVisiteur);
+            f.ShowDialog();
+        }
+
+        private void changerMonMotDePasseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmChangerMdp f = new FrmChangerMdp();
+            f.ShowDialog();
         }
     }
 }

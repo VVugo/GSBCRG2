@@ -42,7 +42,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(260, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(421, 227);
             this.pictureBox1.TabIndex = 9;
@@ -51,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(257, 252);
+            this.label1.Location = new System.Drawing.Point(19, 242);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 10;
@@ -59,22 +59,23 @@
             // 
             // txtbIdentifiant
             // 
-            this.txtbIdentifiant.Location = new System.Drawing.Point(332, 249);
+            this.txtbIdentifiant.Location = new System.Drawing.Point(94, 239);
             this.txtbIdentifiant.Name = "txtbIdentifiant";
             this.txtbIdentifiant.Size = new System.Drawing.Size(257, 20);
             this.txtbIdentifiant.TabIndex = 11;
             // 
             // txtbMotDePasse
             // 
-            this.txtbMotDePasse.Location = new System.Drawing.Point(332, 294);
+            this.txtbMotDePasse.Location = new System.Drawing.Point(94, 284);
             this.txtbMotDePasse.Name = "txtbMotDePasse";
+            this.txtbMotDePasse.PasswordChar = '*';
             this.txtbMotDePasse.Size = new System.Drawing.Size(257, 20);
             this.txtbMotDePasse.TabIndex = 13;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(257, 297);
+            this.label2.Location = new System.Drawing.Point(19, 287);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 13);
             this.label2.TabIndex = 12;
@@ -82,27 +83,29 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(455, 348);
+            this.btnQuitter.Location = new System.Drawing.Point(217, 338);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(134, 44);
             this.btnQuitter.TabIndex = 15;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
             // btnConnexion
             // 
-            this.btnConnexion.Location = new System.Drawing.Point(260, 348);
+            this.btnConnexion.Location = new System.Drawing.Point(22, 338);
             this.btnConnexion.Name = "btnConnexion";
             this.btnConnexion.Size = new System.Drawing.Size(134, 44);
             this.btnConnexion.TabIndex = 16;
             this.btnConnexion.Text = "Connexion";
             this.btnConnexion.UseVisualStyleBackColor = true;
+            this.btnConnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             // 
             // FrmConnexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(367, 393);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.txtbMotDePasse);
