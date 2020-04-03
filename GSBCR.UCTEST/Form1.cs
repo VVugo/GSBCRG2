@@ -78,5 +78,10 @@ namespace GSBCR.UCTEST
                 ucPraticien1.Visible = true;
             }
         }
+
+        private void ucPraticien1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

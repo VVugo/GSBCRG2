@@ -45,9 +45,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 33);
+            this.label1.Location = new System.Drawing.Point(88, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 13);
+            this.label1.Size = new System.Drawing.Size(166, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Consultation Medicament";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -55,17 +56,19 @@
             // cbxMedoc
             // 
             this.cbxMedoc.FormattingEnabled = true;
-            this.cbxMedoc.Location = new System.Drawing.Point(209, 25);
+            this.cbxMedoc.Location = new System.Drawing.Point(279, 31);
+            this.cbxMedoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxMedoc.Name = "cbxMedoc";
-            this.cbxMedoc.Size = new System.Drawing.Size(121, 21);
+            this.cbxMedoc.Size = new System.Drawing.Size(160, 24);
             this.cbxMedoc.TabIndex = 2;
             this.cbxMedoc.SelectedIndexChanged += new System.EventHandler(this.cbxMedoc_SelectedIndexChanged);
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(713, 415);
+            this.btnQuitter.Location = new System.Drawing.Point(951, 511);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitter.Size = new System.Drawing.Size(100, 28);
             this.btnQuitter.TabIndex = 3;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -74,9 +77,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(472, 28);
+            this.label2.Location = new System.Drawing.Point(629, 34);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 13);
+            this.label2.Size = new System.Drawing.Size(145, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Consultation Praticien";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -84,34 +88,38 @@
             // cbxPraticien
             // 
             this.cbxPraticien.FormattingEnabled = true;
-            this.cbxPraticien.Location = new System.Drawing.Point(587, 25);
+            this.cbxPraticien.Location = new System.Drawing.Point(783, 31);
+            this.cbxPraticien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbxPraticien.Name = "cbxPraticien";
-            this.cbxPraticien.Size = new System.Drawing.Size(121, 21);
+            this.cbxPraticien.Size = new System.Drawing.Size(160, 24);
             this.cbxPraticien.TabIndex = 5;
             this.cbxPraticien.SelectedIndexChanged += new System.EventHandler(this.cbxPraticien_SelectedIndexChanged);
             // 
             // ucMedicament1
             // 
             this.ucMedicament1.LeMedicament = null;
-            this.ucMedicament1.Location = new System.Drawing.Point(42, 52);
+            this.ucMedicament1.Location = new System.Drawing.Point(56, 64);
+            this.ucMedicament1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucMedicament1.Name = "ucMedicament1";
-            this.ucMedicament1.Size = new System.Drawing.Size(380, 364);
+            this.ucMedicament1.Size = new System.Drawing.Size(507, 448);
             this.ucMedicament1.TabIndex = 0;
             this.ucMedicament1.Load += new System.EventHandler(this.ucMedicament1_Load);
             // 
             // ucPraticien1
             // 
             this.ucPraticien1.LePraticien = null;
-            this.ucPraticien1.Location = new System.Drawing.Point(475, 71);
+            this.ucPraticien1.Location = new System.Drawing.Point(633, 87);
+            this.ucPraticien1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucPraticien1.Name = "ucPraticien1";
-            this.ucPraticien1.Size = new System.Drawing.Size(313, 338);
+            this.ucPraticien1.Size = new System.Drawing.Size(417, 416);
             this.ucPraticien1.TabIndex = 6;
+            this.ucPraticien1.Load += new System.EventHandler(this.ucPraticien1_Load);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.ucPraticien1);
             this.Controls.Add(this.cbxPraticien);
             this.Controls.Add(this.label2);
@@ -119,6 +127,7 @@
             this.Controls.Add(this.cbxMedoc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ucMedicament1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
