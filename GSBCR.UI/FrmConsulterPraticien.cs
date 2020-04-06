@@ -19,8 +19,8 @@ namespace GSBCR.UI
         {
             InitializeComponent();
             bsPracticien.DataSource = VisiteurManager.ChargerPraticiens();
-            cbxPracticien.DataSource = bsPracticien;
-            cbxPracticien.DisplayMember = "PRA_NOM";
+            cbxPraticien.DataSource = bsPracticien;
+            cbxPraticien.DisplayMember = "PRA_NOM";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,9 +30,9 @@ namespace GSBCR.UI
 
         private void cbxPracticien_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxPracticien.SelectedIndex != -1)
+            if (cbxPraticien.SelectedIndex != -1)
             {
-                PRATICIEN p = (PRATICIEN)cbxPracticien.SelectedItem;
+                PRATICIEN p = (PRATICIEN)cbxPraticien.SelectedItem;
                 ucPraticien1.LePraticien = p;
                 ucPraticien1.Visible = true;
             }
@@ -41,10 +41,10 @@ namespace GSBCR.UI
         private void FrmConsulterPraticien_Load(object sender, EventArgs e)
         {
             ucPraticien1.Visible = false;
-            cbxPracticien.SelectedIndex = -1;
+            cbxPraticien.SelectedIndex = -1;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

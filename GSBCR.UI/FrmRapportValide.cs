@@ -21,5 +21,80 @@ namespace GSBCR.UI
         {
             this.Close();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void FrmRapportValide_Load(object sender, EventArgs e)
+        {
+            lblCodeMed.Show();
+            txtCodeMed.Show();
+            lblDateVis.Show();
+            txtDateVis.Show();
+            lblMotifVis.Show();
+            txtMotifVis.Show();
+            lblPraNum.Show();
+            txtNumPra.Show();
+            lblRapEtat.Show();
+            txtRapEtat.Show();
+            
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void BtnDetail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }
