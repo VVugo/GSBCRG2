@@ -207,5 +207,7 @@ namespace GSBCR.BLL
             PRATICIEN pra = new PratricienDAO().FindById(pranum);
             return pra;
         }
+
+        
     }
 }

@@ -11,12 +11,12 @@ using GSBCR.BLL;
 
 namespace GSBCR.UI
 {
-    public partial class FrmMenuVisiteur : Form
+    public partial class FrmMenu : Form
     {
         private VAFFECTATION leProfil;
         private VISITEUR leVisiteur;
 
-        public FrmMenuVisiteur(VISITEUR v)
+        public FrmMenu(VISITEUR v)
         {
             string matricule = v.VIS_MATRICULE;
             string mdp = v.vis_mdp;
@@ -27,15 +27,16 @@ namespace GSBCR.UI
                 //Charge l'utilisateur
                 leVisiteur = VisiteurManager.ChargerVisiteur(matricule, mdp);
                 leProfil = VisiteurManager.ChargerAffectationVisiteur(leVisiteur.VIS_MATRICULE);
+               
                 if (leProfil.TRA_ROLE == "Délégué")
                 {
-                    maRégionToolStripMenuItem.Enabled = true;
+                    maRégionToolStripMenuItem.Visible = true;
                 }
                 else if (leProfil.TRA_ROLE == "Responsable")
                 {
-                    monSecteurToolStripMenuItem.Enabled = true;
-                    mesRapportsEnCoursToolStripMenuItem.Enabled = false;
-                    mesRapportsValidésToolStripMenuItem.Enabled = false;
+                    monSecteurToolStripMenuItem.Visible = true;
+                    mesRapportsEnCoursToolStripMenuItem.Visible = false;
+                    mesRapportsValidésToolStripMenuItem.Visible = false;
                 }
             }
             catch (Exception ex)
@@ -97,6 +98,20 @@ namespace GSBCR.UI
         private void changerMonMotDePasseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmChangerMdp f = new FrmChangerMdp();
+            f.ShowDialog();
+        }
+
+        private void btnDeconnexion_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FrmConnexion f = new FrmConnexion();
+            f.ShowDialog();
+
+        }
+
+        private void lesPraticiensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsulterPraticien f = new FrmConsulterPraticien();
             f.ShowDialog();
         }
     }

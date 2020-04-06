@@ -25,12 +25,13 @@ namespace GSBCR.UI
             leVisiteur = VisiteurManager.ChargerVisiteur(txtbIdentifiant.Text, txtbMotDePasse.Text);
             if( leVisiteur != null)
             {
-                FrmMenuVisiteur f = new FrmMenuVisiteur(leVisiteur);
+                this.Hide();
+                FrmMenu f = new FrmMenu(leVisiteur);
                 f.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Mot de passe incorrect", "Gestion Rapports de visite", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Mot de passe incorrect", "Erreur de connexion", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -38,5 +39,6 @@ namespace GSBCR.UI
         {
             this.Close();
         }
+
     }
 }

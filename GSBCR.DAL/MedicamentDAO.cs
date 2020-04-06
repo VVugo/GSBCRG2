@@ -12,14 +12,16 @@ namespace GSBCR.DAL
 {
     public class MedicamentDAO
     {
+        /// <summary>
+        /// Permet de rechercher un médicamennt par son nom de dépot
+        /// </summary>
+        /// <param depot="MED_DEPOTLEGAL">Dépot d'un médicament</param>
+        /// <returns>MEDICAMENT</returns>
         public MEDICAMENT FindById(string depot)
         {
-            //rechercher un médicament par son nom de dépot
             MEDICAMENT med = null;
             using (var context = new GSB_VisiteEntities())
             {
-                //désactiver le chargement différé
-                //context.Configuration.LazyLoadingEnabled = false;
                 var req = from m in context.MEDICAMENTs.Include("LaFamille")
                           where m.MED_DEPOTLEGAL == depot
                           select m;
@@ -29,14 +31,15 @@ namespace GSBCR.DAL
             return med;
         }
 
+        /// <summary>
+        /// Permet de charger tous les médicaments
+        /// </summary>
+        /// <returns>List MEDICAMENT</returns>
         public List<MEDICAMENT> FindAll()
         {
-            //charger tous les médicaments
             List<MEDICAMENT> meds = null;
             using (var context = new GSB_VisiteEntities())
             {
-                //désactiver le chargement différé
-                //context.Configuration.LazyLoadingEnabled = false;
                 var req = from m in context.MEDICAMENTs.Include("LaFamille")
                           select m;
                 meds = req.ToList<MEDICAMENT>();
@@ -46,6 +49,11 @@ namespace GSBCR.DAL
             
         }
 
+        /// <summary>
+        /// Permet de charger tous les médicaments d'une famille
+        /// <param code="FAM_CODE">Code famillet</param>
+        /// </summary>
+        /// <returns>List MEDICAMENT</returns>
         public List<MEDICAMENT> FindByFamille(string code)
         {
             //charger tous les médicaments d'une famille

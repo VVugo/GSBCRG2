@@ -43,7 +43,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(77, 29);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 13);
             this.label1.TabIndex = 0;
@@ -52,7 +52,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(254, 156);
+            this.label2.Location = new System.Drawing.Point(12, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 1;
@@ -60,21 +60,21 @@
             // 
             // txtbMdpActuel
             // 
-            this.txtbMdpActuel.Location = new System.Drawing.Point(393, 156);
+            this.txtbMdpActuel.Location = new System.Drawing.Point(151, 69);
             this.txtbMdpActuel.Name = "txtbMdpActuel";
             this.txtbMdpActuel.Size = new System.Drawing.Size(177, 20);
             this.txtbMdpActuel.TabIndex = 3;
             // 
             // txtbNouveauMdp
             // 
-            this.txtbNouveauMdp.Location = new System.Drawing.Point(393, 195);
+            this.txtbNouveauMdp.Location = new System.Drawing.Point(151, 108);
             this.txtbNouveauMdp.Name = "txtbNouveauMdp";
             this.txtbNouveauMdp.Size = new System.Drawing.Size(177, 20);
             this.txtbNouveauMdp.TabIndex = 4;
             // 
             // txtbConfNouveauMdp
             // 
-            this.txtbConfNouveauMdp.Location = new System.Drawing.Point(393, 239);
+            this.txtbConfNouveauMdp.Location = new System.Drawing.Point(151, 152);
             this.txtbConfNouveauMdp.Name = "txtbConfNouveauMdp";
             this.txtbConfNouveauMdp.Size = new System.Drawing.Size(177, 20);
             this.txtbConfNouveauMdp.TabIndex = 5;
@@ -82,7 +82,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(254, 195);
+            this.label3.Location = new System.Drawing.Point(12, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 13);
             this.label3.TabIndex = 6;
@@ -91,7 +91,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(263, 246);
+            this.label4.Location = new System.Drawing.Point(21, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 13);
             this.label4.TabIndex = 7;
@@ -99,18 +99,18 @@
             // 
             // btnModification
             // 
-            this.btnModification.Location = new System.Drawing.Point(253, 387);
+            this.btnModification.Location = new System.Drawing.Point(38, 259);
             this.btnModification.Name = "btnModification";
-            this.btnModification.Size = new System.Drawing.Size(75, 23);
+            this.btnModification.Size = new System.Drawing.Size(91, 50);
             this.btnModification.TabIndex = 8;
             this.btnModification.Text = "Modifier";
             this.btnModification.UseVisualStyleBackColor = true;
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(443, 387);
+            this.btnQuitter.Location = new System.Drawing.Point(213, 259);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitter.Size = new System.Drawing.Size(91, 50);
             this.btnQuitter.TabIndex = 9;
             this.btnQuitter.Text = "Annuler";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@
             // lblMessageError
             // 
             this.lblMessageError.AutoSize = true;
-            this.lblMessageError.Location = new System.Drawing.Point(376, 322);
+            this.lblMessageError.Location = new System.Drawing.Point(137, 214);
             this.lblMessageError.Name = "lblMessageError";
             this.lblMessageError.Size = new System.Drawing.Size(82, 13);
             this.lblMessageError.TabIndex = 10;
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(345, 331);
             this.Controls.Add(this.lblMessageError);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnModification);

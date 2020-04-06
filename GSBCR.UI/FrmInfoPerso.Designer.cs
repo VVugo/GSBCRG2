@@ -44,6 +44,7 @@
             this.btnModification.TabIndex = 1;
             this.btnModification.Text = "Modifier";
             this.btnModification.UseVisualStyleBackColor = true;
+            this.btnModification.Click += new System.EventHandler(this.btnModification_Click);
             // 
             // btnQuitter
             // 
