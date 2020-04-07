@@ -113,6 +113,18 @@
     <Compile Include="FrmRapportValide.Designer.cs">
       <DependentUpon>FrmRapportValide.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRegion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegion.Designer.cs">
+      <DependentUpon>FrmRegion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegionDetails.Designer.cs">
+      <DependentUpon>FrmRegionDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSaisir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,12 @@
     <EmbeddedResource Include="FrmRapportValide.resx">
       <DependentUpon>FrmRapportValide.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegion.resx">
+      <DependentUpon>FrmRegion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegionDetails.resx">
+      <DependentUpon>FrmRegionDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,7 +176,9 @@
     <None Include="app.config" />
     <None Include="Properties\DataSources\GSBCR.BLL.Manager.datasource" />
     <None Include="Properties\DataSources\GSBCR.DC.RapportVisite.datasource" />
+    <None Include="Properties\DataSources\GSBCR.modele.PRATICIEN.datasource" />
     <None Include="Properties\DataSources\GSBCR.modele.RAPPORT_VISITE.datasource" />
+    <None Include="Properties\DataSources\GSBCR.modele.REGION.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

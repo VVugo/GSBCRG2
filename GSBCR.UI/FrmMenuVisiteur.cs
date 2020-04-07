@@ -99,5 +99,16 @@ namespace GSBCR.UI
             FrmChangerMdp f = new FrmChangerMdp();
             f.ShowDialog();
         }
+
+        private void RapportsNonConsultésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRegion f = new FrmRegion();
+            f.ShowDialog();
+        }
+
+        private void ListeDesVisiteursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
