@@ -122,7 +122,7 @@
             this.txtNom.CausesValidation = false;
             this.txtNom.Location = new System.Drawing.Point(123, 43);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(100, 20);
+            this.txtNom.Size = new System.Drawing.Size(139, 20);
             this.txtNom.TabIndex = 9;
             this.txtNom.TabStop = false;
             // 
@@ -131,7 +131,7 @@
             this.txtPrenom.CausesValidation = false;
             this.txtPrenom.Location = new System.Drawing.Point(123, 81);
             this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(100, 20);
+            this.txtPrenom.Size = new System.Drawing.Size(139, 20);
             this.txtPrenom.TabIndex = 10;
             this.txtPrenom.TabStop = false;
             // 
@@ -140,7 +140,7 @@
             this.txtAdresse.CausesValidation = false;
             this.txtAdresse.Location = new System.Drawing.Point(123, 113);
             this.txtAdresse.Name = "txtAdresse";
-            this.txtAdresse.Size = new System.Drawing.Size(100, 20);
+            this.txtAdresse.Size = new System.Drawing.Size(139, 20);
             this.txtAdresse.TabIndex = 11;
             this.txtAdresse.TabStop = false;
             // 
@@ -149,7 +149,7 @@
             this.txtCp.CausesValidation = false;
             this.txtCp.Location = new System.Drawing.Point(123, 150);
             this.txtCp.Name = "txtCp";
-            this.txtCp.Size = new System.Drawing.Size(100, 20);
+            this.txtCp.Size = new System.Drawing.Size(139, 20);
             this.txtCp.TabIndex = 12;
             this.txtCp.TabStop = false;
             // 
@@ -158,7 +158,7 @@
             this.txtVille.CausesValidation = false;
             this.txtVille.Location = new System.Drawing.Point(123, 192);
             this.txtVille.Name = "txtVille";
-            this.txtVille.Size = new System.Drawing.Size(100, 20);
+            this.txtVille.Size = new System.Drawing.Size(139, 20);
             this.txtVille.TabIndex = 13;
             this.txtVille.TabStop = false;
             // 
@@ -167,7 +167,7 @@
             this.txtCoefNot.CausesValidation = false;
             this.txtCoefNot.Location = new System.Drawing.Point(123, 230);
             this.txtCoefNot.Name = "txtCoefNot";
-            this.txtCoefNot.Size = new System.Drawing.Size(100, 20);
+            this.txtCoefNot.Size = new System.Drawing.Size(139, 20);
             this.txtCoefNot.TabIndex = 14;
             this.txtCoefNot.TabStop = false;
             // 
@@ -176,7 +176,7 @@
             this.txtType.CausesValidation = false;
             this.txtType.Location = new System.Drawing.Point(123, 264);
             this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(100, 20);
+            this.txtType.Size = new System.Drawing.Size(139, 20);
             this.txtType.TabIndex = 15;
             this.txtType.TabStop = false;
             // 

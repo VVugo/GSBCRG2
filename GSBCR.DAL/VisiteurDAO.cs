@@ -31,6 +31,34 @@ namespace GSBCR.DAL
             }
             return vis;
         }
-              
+
+
+        /// <summary>
+        /// Permet de mettre à jour les informations d'un utilisateur
+        /// un rapport dans la base de données par appel de la procédure stockée updRapport
+        /// </summary>
+        /// <param name="m">matricule visiteur</param>
+        /*
+        public void update(string matricule)
+        {
+            using (var context = new GSB_VisiteEntities())
+            {
+                try
+                {
+                    //mise à jour de l'état du rapport 
+                    var req = (from v in context.VISITEURs where v.VIS_MATRICULE == matricule select v);
+                    context.Entry(v).State = System.Data.EntityState.Modified;
+                    //sauvegarde du contexte
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+
+                    throw ex;
+                }
+
+            }
+        }
+        */
     }
 }

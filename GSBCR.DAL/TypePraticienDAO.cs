@@ -12,9 +12,14 @@ namespace GSBCR.DAL
 {
     public class TypePraticienDAO
     {
+
+        /// <summary>
+        /// Permet de rechercher un type de praticien avec son code
+        /// </summary>
+        /// <param code="TYP_CODE">Type code praticien</param>
+        /// <returns>TYPE PRATICIEN</returns>
         public TYPE_PRATICIEN FindById(string code)
         {
-            //Rechercher un type praticien par son code
             TYPE_PRATICIEN typ = null;
             using ( var context = new GSB_VisiteEntities())
             {
@@ -26,6 +31,10 @@ namespace GSBCR.DAL
             return typ;
         }
 
+        /// <summary>
+        /// Permet de charger tous les types de praticiens
+        /// </summary>
+        /// <returns>TYPE PRATICIEN</returns>
         public List<TYPE_PRATICIEN> FindAll()
         {
             //Charger tous les types praticiens

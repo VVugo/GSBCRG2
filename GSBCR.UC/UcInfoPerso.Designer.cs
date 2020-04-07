@@ -42,17 +42,18 @@
             // lblNomPrenom
             // 
             this.lblNomPrenom.AutoSize = true;
-            this.lblNomPrenom.Location = new System.Drawing.Point(85, 13);
+            this.lblNomPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomPrenom.Location = new System.Drawing.Point(23, 18);
             this.lblNomPrenom.Name = "lblNomPrenom";
-            this.lblNomPrenom.Size = new System.Drawing.Size(80, 13);
+            this.lblNomPrenom.Size = new System.Drawing.Size(160, 25);
             this.lblNomPrenom.TabIndex = 0;
             this.lblNomPrenom.Text = "Nom et Prénom";
             // 
             // txtbAdresse
             // 
-            this.txtbAdresse.Location = new System.Drawing.Point(88, 68);
+            this.txtbAdresse.Location = new System.Drawing.Point(67, 68);
             this.txtbAdresse.Name = "txtbAdresse";
-            this.txtbAdresse.Size = new System.Drawing.Size(100, 20);
+            this.txtbAdresse.Size = new System.Drawing.Size(176, 20);
             this.txtbAdresse.TabIndex = 3;
             // 
             // label2
@@ -66,7 +67,7 @@
             // 
             // txtbCodePostal
             // 
-            this.txtbCodePostal.Location = new System.Drawing.Point(88, 155);
+            this.txtbCodePostal.Location = new System.Drawing.Point(110, 155);
             this.txtbCodePostal.Name = "txtbCodePostal";
             this.txtbCodePostal.Size = new System.Drawing.Size(100, 20);
             this.txtbCodePostal.TabIndex = 5;
@@ -82,9 +83,9 @@
             // 
             // txtbVille
             // 
-            this.txtbVille.Location = new System.Drawing.Point(88, 113);
+            this.txtbVille.Location = new System.Drawing.Point(65, 113);
             this.txtbVille.Name = "txtbVille";
-            this.txtbVille.Size = new System.Drawing.Size(100, 20);
+            this.txtbVille.Size = new System.Drawing.Size(178, 20);
             this.txtbVille.TabIndex = 7;
             // 
             // label4

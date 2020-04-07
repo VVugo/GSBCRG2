@@ -28,7 +28,8 @@ namespace GSBCR.UI
 
         private void FrmInfoPerso_Load(object sender, EventArgs e)
         {
-            
+            ucInfoPerso1.LeVisiteur = leVisiteur;
+
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
@@ -36,6 +37,9 @@ namespace GSBCR.UI
             this.Close();
         }
 
+        private void btnModification_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

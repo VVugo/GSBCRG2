@@ -63,6 +63,18 @@
     <Compile Include="UcPraticien.Designer.cs">
       <DependentUpon>UcPraticien.cs</DependentUpon>
     </Compile>
+    <Compile Include="UcStatistique.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcStatistique.Designer.cs">
+      <DependentUpon>UcStatistique.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UcVisiteur.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UcVisiteur.Designer.cs">
+      <DependentUpon>UcVisiteur.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="UcInfoPerso.resx">
@@ -73,6 +85,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UcPraticien.resx">
       <DependentUpon>UcPraticien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcStatistique.resx">
+      <DependentUpon>UcStatistique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UcVisiteur.resx">
+      <DependentUpon>UcVisiteur.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

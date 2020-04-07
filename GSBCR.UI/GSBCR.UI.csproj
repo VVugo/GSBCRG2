@@ -83,23 +83,41 @@
     <Compile Include="FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsulterMedoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsulterMedoc.Designer.cs">
+      <DependentUpon>FrmConsulterMedoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsulterPraticien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmConsulterPraticien.Designer.cs">
       <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMenuVisiteur.cs">
+    <Compile Include="FrmGestionEquipe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMenuVisiteur.designer.cs">
-      <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
+    <Compile Include="FrmGestionEquipe.Designer.cs">
+      <DependentUpon>FrmGestionEquipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenu.designer.cs">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInfoPerso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmInfoPerso.Designer.cs">
       <DependentUpon>FrmInfoPerso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNouvelUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNouvelUtilisateur.Designer.cs">
+      <DependentUpon>FrmNouvelUtilisateur.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRapportEnCours.cs">
       <SubType>Form</SubType>
@@ -119,6 +137,12 @@
     <Compile Include="FrmSaisir.designer.cs">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmStatistiqueSecteur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStatistiqueSecteur.Designer.cs">
+      <DependentUpon>FrmStatistiqueSecteur.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmChangerMdp.resx">
@@ -127,14 +151,23 @@
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsulterMedoc.resx">
+      <DependentUpon>FrmConsulterMedoc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConsulterPraticien.resx">
       <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGestionEquipe.resx">
+      <DependentUpon>FrmGestionEquipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInfoPerso.resx">
       <DependentUpon>FrmInfoPerso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMenuVisiteur.resx">
-      <DependentUpon>FrmMenuVisiteur.cs</DependentUpon>
+    <EmbeddedResource Include="FrmMenu.resx">
+      <DependentUpon>FrmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNouvelUtilisateur.resx">
+      <DependentUpon>FrmNouvelUtilisateur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRapportEnCours.resx">
       <DependentUpon>FrmRapportEnCours.cs</DependentUpon>
@@ -144,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStatistiqueSecteur.resx">
+      <DependentUpon>FrmStatistiqueSecteur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

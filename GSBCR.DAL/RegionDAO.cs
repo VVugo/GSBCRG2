@@ -11,9 +11,14 @@ namespace GSBCR.DAL
 {
     public class RegionDAO
     {
+
+        /// <summary>
+        /// Permet de rechercher une région par son nom
+        /// </summary>
+        /// <param code="REG_NOM">Region nom</param>
+        /// <returns>REGION</returns>
         public REGION FindById(string code)
         {
-            //Rechercher une région par son nom
             REGION reg = null;
             using (var context = new GSB_VisiteEntities())
             {
@@ -25,6 +30,10 @@ namespace GSBCR.DAL
             return reg;
         }
 
+        /// <summary>
+        /// Permet de charger toutes les régions
+        /// </summary>
+        /// <returns>List REGION</returns>
         public List<REGION> FindAll()
         {
             //Charger toutes les régions
