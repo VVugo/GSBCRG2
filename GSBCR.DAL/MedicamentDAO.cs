@@ -56,7 +56,6 @@ namespace GSBCR.DAL
         /// <returns>List MEDICAMENT</returns>
         public List<MEDICAMENT> FindByFamille(string code)
         {
-            //charger tous les médicaments d'une famille
             List<MEDICAMENT> meds = null;
             using (var context = new GSB_VisiteEntities())
             {

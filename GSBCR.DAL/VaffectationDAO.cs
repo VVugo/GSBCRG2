@@ -39,8 +39,6 @@ namespace GSBCR.DAL
             List<VAFFECTATION> lv = null;
             using (var context = new GSB_VisiteEntities())
             {
-                //désactiver le chargement différé
-                //context.Configuration.LazyLoadingEnabled = false;
                 var req = from vaff in context.VAFFECTATION
                           where vaff.REG_CODE == regionCode && vaff.TRA_ROLE == "Visiteur"
                           select vaff;

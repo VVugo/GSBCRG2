@@ -37,7 +37,6 @@ namespace GSBCR.DAL
         /// <returns>TYPE PRATICIEN</returns>
         public List<TYPE_PRATICIEN> FindAll()
         {
-            //Charger tous les types praticiens
             List<TYPE_PRATICIEN> typ = null;
             using ( var context = new GSB_VisiteEntities())
             {

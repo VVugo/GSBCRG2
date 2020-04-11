@@ -49,13 +49,16 @@ namespace UnitTestGSBCR
 
         [TestMethod]
         public void TestChargerRapportVisiteurFinis()
-        {            
+        {
+            bool ok = false;
             List<RAPPORT_VISITE> lr = VisiteurManager.ChargerRapportVisiteurFinis("a131");
             foreach (RAPPORT_VISITE r in lr)
             {
                 Assert.AreEqual("a131", r.RAP_MATRICULE, "le rapport n'appartient pas au matricule a131");
                 Assert.AreNotEqual("1", r.RAP_ETAT, "état rapport différent de terminé et non lus (2 & 3)");
-                
+
+                ok = (r.RAP_NUM >= 57 && r.RAP_NUM <= 62);
+                Assert.IsFalse(ok, "N° de rapport faux");
             }
         }
     }

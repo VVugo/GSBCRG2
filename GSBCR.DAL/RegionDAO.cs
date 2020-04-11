@@ -36,7 +36,6 @@ namespace GSBCR.DAL
         /// <returns>List REGION</returns>
         public List<REGION> FindAll()
         {
-            //Charger toutes les régions
             List<REGION> reg = null;
             using ( var context = new GSB_VisiteEntities())
             {

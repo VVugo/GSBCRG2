@@ -73,7 +73,7 @@
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnModification);
             this.Name = "FrmInfoPerso";
-            this.Text = "FrmModifInfos";
+            this.Text = "Informations personnelles";
             this.Load += new System.EventHandler(this.FrmInfoPerso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsInfoPerso)).EndInit();
             this.ResumeLayout(false);
