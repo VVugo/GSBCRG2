@@ -89,15 +89,14 @@ namespace GSBCR.UI
         }
 
         private void modifierConsulterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
+        {            
             FrmInfoPerso f = new FrmInfoPerso(leVisiteur);
             f.ShowDialog();
         }
 
         private void changerMonMotDePasseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmChangerMdp f = new FrmChangerMdp();
+            FrmChangerMdp f = new FrmChangerMdp(leVisiteur);
             f.ShowDialog();
         }
 

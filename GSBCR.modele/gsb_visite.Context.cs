@@ -12,6 +12,9 @@ namespace GSBCR.modele
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class GSB_VisiteEntities : DbContext
     {
@@ -40,5 +43,95 @@ namespace GSBCR.modele
         public DbSet<TYPE_PRATICIEN> TYPE_PRATICIEN { get; set; }
         public DbSet<VISITEUR> VISITEURs { get; set; }
         public DbSet<VAFFECTATION> VAFFECTATION { get; set; }
+    
+        public virtual int updInfoVisiteur(string pMat, string pNom, string pPrenom, string pAdresse, string pCp, string pVille, Nullable<System.DateTime> pDateEmbauche, string pSecCode, string pLabCode, string pMdp)
+        {
+            var pMatParameter = pMat != null ?
+                new ObjectParameter("pMat", pMat) :
+                new ObjectParameter("pMat", typeof(string));
+    
+            var pNomParameter = pNom != null ?
+                new ObjectParameter("pNom", pNom) :
+                new ObjectParameter("pNom", typeof(string));
+    
+            var pPrenomParameter = pPrenom != null ?
+                new ObjectParameter("pPrenom", pPrenom) :
+                new ObjectParameter("pPrenom", typeof(string));
+    
+            var pAdresseParameter = pAdresse != null ?
+                new ObjectParameter("pAdresse", pAdresse) :
+                new ObjectParameter("pAdresse", typeof(string));
+    
+            var pCpParameter = pCp != null ?
+                new ObjectParameter("pCp", pCp) :
+                new ObjectParameter("pCp", typeof(string));
+    
+            var pVilleParameter = pVille != null ?
+                new ObjectParameter("pVille", pVille) :
+                new ObjectParameter("pVille", typeof(string));
+    
+            var pDateEmbaucheParameter = pDateEmbauche.HasValue ?
+                new ObjectParameter("pDateEmbauche", pDateEmbauche) :
+                new ObjectParameter("pDateEmbauche", typeof(System.DateTime));
+    
+            var pSecCodeParameter = pSecCode != null ?
+                new ObjectParameter("pSecCode", pSecCode) :
+                new ObjectParameter("pSecCode", typeof(string));
+    
+            var pLabCodeParameter = pLabCode != null ?
+                new ObjectParameter("pLabCode", pLabCode) :
+                new ObjectParameter("pLabCode", typeof(string));
+    
+            var pMdpParameter = pMdp != null ?
+                new ObjectParameter("pMdp", pMdp) :
+                new ObjectParameter("pMdp", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("updInfoVisiteur", pMatParameter, pNomParameter, pPrenomParameter, pAdresseParameter, pCpParameter, pVilleParameter, pDateEmbaucheParameter, pSecCodeParameter, pLabCodeParameter, pMdpParameter);
+        }
+    
+        public virtual int addVisiteur(string pMat, string pNom, string pPrenom, string pAdresse, string pCp, string pVille, Nullable<System.DateTime> pDateEmbauche, string pSecCode, string pLabCode, string pMdp)
+        {
+            var pMatParameter = pMat != null ?
+                new ObjectParameter("pMat", pMat) :
+                new ObjectParameter("pMat", typeof(string));
+    
+            var pNomParameter = pNom != null ?
+                new ObjectParameter("pNom", pNom) :
+                new ObjectParameter("pNom", typeof(string));
+    
+            var pPrenomParameter = pPrenom != null ?
+                new ObjectParameter("pPrenom", pPrenom) :
+                new ObjectParameter("pPrenom", typeof(string));
+    
+            var pAdresseParameter = pAdresse != null ?
+                new ObjectParameter("pAdresse", pAdresse) :
+                new ObjectParameter("pAdresse", typeof(string));
+    
+            var pCpParameter = pCp != null ?
+                new ObjectParameter("pCp", pCp) :
+                new ObjectParameter("pCp", typeof(string));
+    
+            var pVilleParameter = pVille != null ?
+                new ObjectParameter("pVille", pVille) :
+                new ObjectParameter("pVille", typeof(string));
+    
+            var pDateEmbaucheParameter = pDateEmbauche.HasValue ?
+                new ObjectParameter("pDateEmbauche", pDateEmbauche) :
+                new ObjectParameter("pDateEmbauche", typeof(System.DateTime));
+    
+            var pSecCodeParameter = pSecCode != null ?
+                new ObjectParameter("pSecCode", pSecCode) :
+                new ObjectParameter("pSecCode", typeof(string));
+    
+            var pLabCodeParameter = pLabCode != null ?
+                new ObjectParameter("pLabCode", pLabCode) :
+                new ObjectParameter("pLabCode", typeof(string));
+    
+            var pMdpParameter = pMdp != null ?
+                new ObjectParameter("pMdp", pMdp) :
+                new ObjectParameter("pMdp", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addVisiteur", pMatParameter, pNomParameter, pPrenomParameter, pAdresseParameter, pCpParameter, pVilleParameter, pDateEmbaucheParameter, pSecCodeParameter, pLabCodeParameter, pMdpParameter);
+        }
     }
 }
