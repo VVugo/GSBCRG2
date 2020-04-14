@@ -16,20 +16,23 @@ namespace GSBCR.UI
 {
     public partial class FrmInfoPerso : Form
     {
-        private VISITEUR leVisiteur;
+        /// <summary>
+        /// Modification des informations du visiteur
+        /// <param name="v">Visiteur</param>
+        /// </summary>
+
+        private VISITEUR v = null;
+
         public FrmInfoPerso(VISITEUR v)
         {
             InitializeComponent();
-            leVisiteur = v;
-            string matricule = leVisiteur.VIS_MATRICULE;
-            string mdp = leVisiteur.vis_mdp;
-            bsInfoPerso.DataSource = VisiteurManager.ChargerVisiteur(matricule,mdp);
-        }
+            this.v = v;
 
-        private void FrmInfoPerso_Load(object sender, EventArgs e)
-        {
-            ucInfoPerso1.LeVisiteur = leVisiteur;
-
+            lblNomPrenom.Text = v.VIS_NOM + " " + v.Vis_PRENOM;
+            txtbAdresse.Text = v.VIS_ADRESSE;
+            txtbVille.Text = v.VIS_VILLE;
+            txtbCp.Text = v.VIS_CP;
+            lblDateEmbauche.Text = v.VIS_DATEEMBAUCHE.ToString();
         }
 
         private void btnQuitter_Click(object sender, EventArgs e)
@@ -39,7 +42,40 @@ namespace GSBCR.UI
 
         private void btnModification_Click(object sender, EventArgs e)
         {
+            string adresse = txtbAdresse.Text;
+            string cp = txtbCp.Text;
+            string ville = txtbVille.Text;
 
+
+            if (String.IsNullOrEmpty(adresse))
+            {
+                MessageBox.Show("Veuillez renseigner votre adresse !", "Erreur de modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (String.IsNullOrEmpty(cp) || txtbCp.TextLength < 5 || cp.Any(char.IsLetter))
+                {
+                    MessageBox.Show("Veuillez renseigner votre code postal !", "Erreur de modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if (String.IsNullOrEmpty(ville) || ville.All(char.IsNumber))
+                    {
+                        MessageBox.Show("Veuillez renseigner votre ville !", "Erreur de modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        v.VIS_ADRESSE = adresse;
+                        v.VIS_CP = cp;
+                        v.VIS_VILLE = ville;
+
+                        VisiteurManager.MajVisiteur(v);
+
+                        MessageBox.Show("Modification des informations personnelles enregistré", "Mise à Jour des données", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+            }
         }
     }
 }

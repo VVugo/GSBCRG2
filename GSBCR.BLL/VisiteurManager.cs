@@ -221,6 +221,42 @@ namespace GSBCR.BLL
             return pra;
         }
 
-        
+        /// <summary>
+        /// Permet de mettre à jour un visiteur dans la base de données 
+        /// </summary>
+        /// <param name="v">objet visiteur</param>
+        public static void MajVisiteur(VISITEUR v)
+        {
+            //ew VisiteurDAO().update(v);
+
+            try
+             {
+                 new VisiteurDAO().update(v);
+             }
+             catch (Exception ex)
+             {
+
+                 throw ex;
+             }
+
+        }
+
+        /// <summary>
+        /// Permet de créer un visiteur dans la base de données 
+        /// </summary>
+        /// <param name="v">objet visiteur</param>
+        public static void CreateVisiteur(VISITEUR v)
+        {
+            try
+            {
+                new VisiteurDAO().insert(v);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 }

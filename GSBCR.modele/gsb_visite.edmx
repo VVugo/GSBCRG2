@@ -126,7 +126,7 @@
           <Property Name="VIS_MATRICULE" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="JJMMAA" Type="datetime" Nullable="false" />
           <Property Name="REG_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
-          <Property Name="TRA_ROLE" Type="nvarchar" MaxLength="11" />
+          <Property Name="TRA_ROLE" Type="nvarchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <EntityType Name="TYPE_PRATICIEN">
           <Key>
@@ -141,28 +141,29 @@
             <PropertyRef Name="VIS_MATRICULE" />
           </Key>
           <Property Name="VIS_MATRICULE" Type="nvarchar" MaxLength="10" Nullable="false" />
-          <Property Name="VIS_NOM" Type="nvarchar" MaxLength="25" />
-          <Property Name="Vis_PRENOM" Type="nvarchar" MaxLength="50" />
-          <Property Name="VIS_ADRESSE" Type="nvarchar" MaxLength="50" />
-          <Property Name="VIS_CP" Type="nvarchar" MaxLength="5" />
-          <Property Name="VIS_VILLE" Type="nvarchar" MaxLength="30" />
-          <Property Name="VIS_DATEEMBAUCHE" Type="datetime" />
+          <Property Name="VIS_NOM" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Vis_PRENOM" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VIS_ADRESSE" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VIS_CP" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="VIS_VILLE" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="VIS_DATEEMBAUCHE" Type="datetime" Nullable="false" />
           <Property Name="SEC_CODE" Type="nvarchar" MaxLength="1" />
           <Property Name="LAB_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
-          <Property Name="vis_mdp" Type="char" MaxLength="8" />
+          <Property Name="vis_mdp" Type="char" MaxLength="8" Nullable="false" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
-avertissement 6002: La table/vue 'GSB_Visite.dbo.VAFFECTATION' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+avertissement 6002: La table/vue 'GSB_visite_BREST.dbo.VAFFECTATION' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
         <EntityType Name="VAFFECTATION">
           <Key>
             <PropertyRef Name="VIS_MATRICULE" />
             <PropertyRef Name="JJMMAA" />
             <PropertyRef Name="REG_CODE" />
+            
           </Key>
           <Property Name="VIS_MATRICULE" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="JJMMAA" Type="datetime" Nullable="false" />
           <Property Name="REG_CODE" Type="nvarchar" MaxLength="2" Nullable="false" />
-          <Property Name="TRA_ROLE" Type="nvarchar" MaxLength="11" />
+          <Property Name="TRA_ROLE" Type="nvarchar" MaxLength="11" Nullable="false" />
         </EntityType>
         <Association Name="MEDICAMENT_FK00">
           <End Role="FAMILLE" Type="Self.FAMILLE" Multiplicity="1" />
@@ -360,8 +361,29 @@ avertissement 6002: La table/vue 'GSB_Visite.dbo.VAFFECTATION' n'a pas de clé p
           <Parameter Name="pMed1" Type="nvarchar" Mode="In" />
           <Parameter Name="pMed2" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="getProfilVisiteur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="pmat" Type="nvarchar" Mode="In" />
+        <Function Name="addVisiteur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pMat" Type="nvarchar" Mode="In" />
+          <Parameter Name="pNom" Type="nvarchar" Mode="In" />
+          <Parameter Name="pPrenom" Type="nvarchar" Mode="In" />
+          <Parameter Name="pAdresse" Type="nvarchar" Mode="In" />
+          <Parameter Name="pCp" Type="nvarchar" Mode="In" />
+          <Parameter Name="pVille" Type="nvarchar" Mode="In" />
+          <Parameter Name="pDateEmbauche" Type="datetime" Mode="In" />
+          <Parameter Name="pSecCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="pLabCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="pMdp" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="updInfoVisiteur" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pMat" Type="nvarchar" Mode="In" />
+          <Parameter Name="pNom" Type="nvarchar" Mode="In" />
+          <Parameter Name="pPrenom" Type="nvarchar" Mode="In" />
+          <Parameter Name="pAdresse" Type="nvarchar" Mode="In" />
+          <Parameter Name="pCp" Type="nvarchar" Mode="In" />
+          <Parameter Name="pVille" Type="nvarchar" Mode="In" />
+          <Parameter Name="pDateEmbauche" Type="datetime" Mode="In" />
+          <Parameter Name="pSecCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="pLabCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="pMdp" Type="nchar" Mode="In" />
         </Function>
         <Function Name="updRapport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="pMat" Type="nvarchar" Mode="In" />
@@ -542,6 +564,30 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
             <End Role="TRAVAILLER" EntitySet="TRAVAILLERs" />
           </AssociationSet>
           <EntitySet Name="VAFFECTATION" EntityType="GSB_VisiteModel.VAFFECTATION" />
+          <FunctionImport Name="updInfoVisiteur">
+            <Parameter Name="pMat" Mode="In" Type="String" />
+            <Parameter Name="pNom" Mode="In" Type="String" />
+            <Parameter Name="pPrenom" Mode="In" Type="String" />
+            <Parameter Name="pAdresse" Mode="In" Type="String" />
+            <Parameter Name="pCp" Mode="In" Type="String" />
+            <Parameter Name="pVille" Mode="In" Type="String" />
+            <Parameter Name="pDateEmbauche" Mode="In" Type="DateTime" />
+            <Parameter Name="pSecCode" Mode="In" Type="String" />
+            <Parameter Name="pLabCode" Mode="In" Type="String" />
+            <Parameter Name="pMdp" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="addVisiteur">
+            <Parameter Name="pMat" Mode="In" Type="String" />
+            <Parameter Name="pNom" Mode="In" Type="String" />
+            <Parameter Name="pPrenom" Mode="In" Type="String" />
+            <Parameter Name="pAdresse" Mode="In" Type="String" />
+            <Parameter Name="pCp" Mode="In" Type="String" />
+            <Parameter Name="pVille" Mode="In" Type="String" />
+            <Parameter Name="pDateEmbauche" Mode="In" Type="DateTime" />
+            <Parameter Name="pSecCode" Mode="In" Type="String" />
+            <Parameter Name="pLabCode" Mode="In" Type="String" />
+            <Parameter Name="pMdp" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="FAMILLE">
           <Key>
@@ -688,7 +734,7 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
           <Property Name="VIS_MATRICULE" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
           <Property Name="JJMMAA" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="REG_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
-          <Property Name="TRA_ROLE" Type="String" MaxLength="11" Unicode="true" FixedLength="false" />
+          <Property Name="TRA_ROLE" Type="String" MaxLength="11" Unicode="true" FixedLength="false" Nullable="false" />
           <NavigationProperty Name="LaRegion" Relationship="GSB_VisiteModel.TRAVAILLER_FK00" FromRole="TRAVAILLER" ToRole="REGION" />
           <NavigationProperty Name="LeVisiteur" Relationship="GSB_VisiteModel.TRAVAILLER_FK01" FromRole="TRAVAILLER" ToRole="VISITEUR" />
         </EntityType>
@@ -706,15 +752,15 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
             <PropertyRef Name="VIS_MATRICULE" />
           </Key>
           <Property Name="VIS_MATRICULE" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" />
-          <Property Name="VIS_NOM" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
-          <Property Name="Vis_PRENOM" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="VIS_ADRESSE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
-          <Property Name="VIS_CP" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
-          <Property Name="VIS_VILLE" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="VIS_DATEEMBAUCHE" Type="DateTime" Precision="3" />
+          <Property Name="VIS_NOM" Type="String" MaxLength="25" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="Vis_PRENOM" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="VIS_ADRESSE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="VIS_CP" Type="String" MaxLength="5" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="VIS_VILLE" Type="String" MaxLength="30" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="VIS_DATEEMBAUCHE" Type="DateTime" Precision="3" Nullable="false" />
           <Property Name="SEC_CODE" Type="String" MaxLength="1" Unicode="true" FixedLength="false" />
           <Property Name="LAB_CODE" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" />
-          <Property Name="vis_mdp" Type="String" MaxLength="8" Unicode="false" FixedLength="true" />
+          <Property Name="vis_mdp" Type="String" MaxLength="8" Unicode="false" FixedLength="true" Nullable="false" />
           <NavigationProperty Name="LesRapports" Relationship="GSB_VisiteModel.RAPPORT_VISITE_FK01" FromRole="VISITEUR" ToRole="RAPPORT_VISITE" />
           <NavigationProperty Name="LeSecteur" Relationship="GSB_VisiteModel.VISITEUR_FK01" FromRole="VISITEUR" ToRole="SECTEUR" />
           <NavigationProperty Name="LesAffectations" Relationship="GSB_VisiteModel.TRAVAILLER_FK01" FromRole="VISITEUR" ToRole="TRAVAILLER" />
@@ -910,7 +956,7 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
           <Property Type="String" Name="VIS_MATRICULE" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="JJMMAA" Nullable="false" Precision="3" />
           <Property Type="String" Name="REG_CODE" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="TRA_ROLE" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TRA_ROLE" MaxLength="11" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1105,6 +1151,34 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
                 <ScalarProperty Name="vis_mdp" ColumnName="vis_mdp" />
               </MappingFragment>
             </EntityTypeMapping>
+            <EntityTypeMapping TypeName="GSB_VisiteModel.VISITEUR">
+              <ModificationFunctionMapping>
+                <UpdateFunction FunctionName="GSB_VisiteModel.Store.updInfoVisiteur" >
+                  <ScalarProperty Name="LAB_CODE" ParameterName="pLabCode" Version="Current" />
+                  <ScalarProperty Name="SEC_CODE" ParameterName="pSecCode" Version="Current" />
+                  <ScalarProperty Name="VIS_DATEEMBAUCHE" ParameterName="pDateEmbauche" Version="Current" />
+                  <ScalarProperty Name="Vis_PRENOM" ParameterName="pPrenom" Version="Current" />
+                  <ScalarProperty Name="VIS_NOM" ParameterName="pNom" Version="Current" />
+                  <ScalarProperty Name="vis_mdp" ParameterName="pMdp" Version="Current" />
+                  <ScalarProperty Name="VIS_VILLE" ParameterName="pVille" Version="Current" />
+                  <ScalarProperty Name="VIS_CP" ParameterName="pCp" Version="Current" />
+                  <ScalarProperty Name="VIS_ADRESSE" ParameterName="pAdresse" Version="Current" />
+                  <ScalarProperty Name="VIS_MATRICULE" ParameterName="pMat" Version="Current" />
+                </UpdateFunction>
+                <InsertFunction FunctionName="GSB_VisiteModel.Store.addVisiteur" >
+                  <ScalarProperty Name="vis_mdp" ParameterName="pMdp" />
+                  <ScalarProperty Name="LAB_CODE" ParameterName="pLabCode" />
+                  <ScalarProperty Name="SEC_CODE" ParameterName="pSecCode" />
+                  <ScalarProperty Name="VIS_DATEEMBAUCHE" ParameterName="pDateEmbauche" />
+                  <ScalarProperty Name="VIS_VILLE" ParameterName="pVille" />
+                  <ScalarProperty Name="VIS_CP" ParameterName="pCp" />
+                  <ScalarProperty Name="VIS_ADRESSE" ParameterName="pAdresse" />
+                  <ScalarProperty Name="Vis_PRENOM" ParameterName="pPrenom" />
+                  <ScalarProperty Name="VIS_NOM" ParameterName="pNom" />
+                  <ScalarProperty Name="VIS_MATRICULE" ParameterName="pMat" />
+                </InsertFunction>
+              </ModificationFunctionMapping>
+            </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VAFFECTATION">
             <EntityTypeMapping TypeName="GSB_VisiteModel.VAFFECTATION">
@@ -1116,6 +1190,8 @@ FROM [dbo].[VAFFECTATION] AS [VAFFECTATION]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="updInfoVisiteur" FunctionName="GSB_VisiteModel.Store.updInfoVisiteur" />
+          <FunctionImportMapping FunctionImportName="addVisiteur" FunctionName="GSB_VisiteModel.Store.addVisiteur" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
