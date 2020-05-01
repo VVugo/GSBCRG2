@@ -33,22 +33,18 @@ namespace GSBCR.DAL
         }
 
 
+
         /// <summary>
-        /// Permet de mettre à jour les informations d'un utilisateur
-        /// un rapport dans la base de données par appel de la procédure stockée updRapport
+        /// Permet de mettre à jour un visiteur dans la base de données par appel de la procédure stockée updInfoVisiteur
         /// </summary>
-        /// <param name="m">matricule visiteur</param>
-        /*
-        public void update(string matricule)
+        /// <param name="v">objet visiteur</param>
+        public void update(VISITEUR v)
         {
             using (var context = new GSB_VisiteEntities())
             {
                 try
                 {
-                    //mise à jour de l'état du rapport 
-                    var req = (from v in context.VISITEURs where v.VIS_MATRICULE == matricule select v);
                     context.Entry(v).State = System.Data.EntityState.Modified;
-                    //sauvegarde du contexte
                     context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -59,6 +55,26 @@ namespace GSBCR.DAL
 
             }
         }
-        */
+
+        /// <summary>
+        /// Permet de créer un visiteur dans la base de données par appel de la procédure stockée addVisiteur
+        /// </summary>
+        /// <param name="v">objet visiteur</param>
+        public void insert(VISITEUR v)
+        {
+            using (var context = new GSB_VisiteEntities())
+            {
+                try
+                {
+                    context.VISITEURs.Add(v);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
+
+        }
     }
 }

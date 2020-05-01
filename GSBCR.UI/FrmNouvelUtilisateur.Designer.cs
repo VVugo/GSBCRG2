@@ -42,8 +42,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtbAdresse = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtbMdp = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -80,7 +78,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(253, 264);
+            this.dateTimePicker1.Location = new System.Drawing.Point(337, 182);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(184, 20);
             this.dateTimePicker1.TabIndex = 8;
@@ -165,29 +163,13 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Adresse";
             // 
-            // txtbMdp
-            // 
-            this.txtbMdp.Location = new System.Drawing.Point(358, 93);
-            this.txtbMdp.Name = "txtbMdp";
-            this.txtbMdp.Size = new System.Drawing.Size(133, 20);
-            this.txtbMdp.TabIndex = 20;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(281, 96);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Mot de passe";
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Visiteur",
             "Délégué"});
-            this.comboBox1.Location = new System.Drawing.Point(358, 137);
+            this.comboBox1.Location = new System.Drawing.Point(358, 94);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(133, 21);
             this.comboBox1.TabIndex = 21;
@@ -195,7 +177,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(302, 140);
+            this.label9.Location = new System.Drawing.Point(302, 97);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 22;
@@ -204,7 +186,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(250, 184);
+            this.label10.Location = new System.Drawing.Point(250, 141);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(102, 13);
             this.label10.TabIndex = 24;
@@ -216,14 +198,14 @@
             this.comboBox2.Items.AddRange(new object[] {
             "Visiteur",
             "Délégué"});
-            this.comboBox2.Location = new System.Drawing.Point(358, 181);
+            this.comboBox2.Location = new System.Drawing.Point(358, 138);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(133, 21);
             this.comboBox2.TabIndex = 23;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(97, 316);
+            this.button1.Location = new System.Drawing.Point(97, 264);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 50);
             this.button1.TabIndex = 25;
@@ -232,7 +214,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(358, 316);
+            this.button2.Location = new System.Drawing.Point(358, 264);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 50);
             this.button2.TabIndex = 26;
@@ -242,7 +224,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(119, 270);
+            this.label11.Location = new System.Drawing.Point(240, 186);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(91, 13);
             this.label11.TabIndex = 27;
@@ -252,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 378);
+            this.ClientSize = new System.Drawing.Size(545, 337);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -260,8 +242,6 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.txtbMdp);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.txtbVille);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtbCp);
@@ -299,8 +279,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtbAdresse;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtbMdp;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

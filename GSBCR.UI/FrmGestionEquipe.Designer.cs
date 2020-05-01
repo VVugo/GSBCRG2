@@ -30,9 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.cbxVisiteur = new System.Windows.Forms.ComboBox();
-            this.ucVisiteur1 = new GSBCR.UC.UcVisiteur();
             this.btnModifier = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
+            this.lblInformation = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbxRegion = new System.Windows.Forms.ComboBox();
+            this.cbxRole = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -52,16 +56,9 @@
             this.cbxVisiteur.Size = new System.Drawing.Size(121, 21);
             this.cbxVisiteur.TabIndex = 2;
             // 
-            // ucVisiteur1
-            // 
-            this.ucVisiteur1.Location = new System.Drawing.Point(33, 55);
-            this.ucVisiteur1.Name = "ucVisiteur1";
-            this.ucVisiteur1.Size = new System.Drawing.Size(261, 228);
-            this.ucVisiteur1.TabIndex = 3;
-            // 
             // btnModifier
             // 
-            this.btnModifier.Location = new System.Drawing.Point(12, 312);
+            this.btnModifier.Location = new System.Drawing.Point(12, 258);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(98, 40);
             this.btnModifier.TabIndex = 4;
@@ -70,21 +67,68 @@
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(225, 312);
+            this.btnQuitter.Location = new System.Drawing.Point(222, 258);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(98, 40);
             this.btnQuitter.TabIndex = 5;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
             // 
+            // lblInformation
+            // 
+            this.lblInformation.AutoSize = true;
+            this.lblInformation.Location = new System.Drawing.Point(41, 84);
+            this.lblInformation.Name = "lblInformation";
+            this.lblInformation.Size = new System.Drawing.Size(69, 13);
+            this.lblInformation.TabIndex = 6;
+            this.lblInformation.Text = "lblInformation";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(69, 132);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Région";
+            // 
+            // cbxRegion
+            // 
+            this.cbxRegion.FormattingEnabled = true;
+            this.cbxRegion.Location = new System.Drawing.Point(139, 132);
+            this.cbxRegion.Name = "cbxRegion";
+            this.cbxRegion.Size = new System.Drawing.Size(121, 21);
+            this.cbxRegion.TabIndex = 8;
+            // 
+            // cbxRole
+            // 
+            this.cbxRole.FormattingEnabled = true;
+            this.cbxRole.Location = new System.Drawing.Point(139, 188);
+            this.cbxRole.Name = "cbxRole";
+            this.cbxRole.Size = new System.Drawing.Size(121, 21);
+            this.cbxRole.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(69, 188);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Rôle";
+            // 
             // FrmGestionEquipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 381);
+            this.ClientSize = new System.Drawing.Size(332, 313);
+            this.Controls.Add(this.cbxRole);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cbxRegion);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblInformation);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnModifier);
-            this.Controls.Add(this.ucVisiteur1);
             this.Controls.Add(this.cbxVisiteur);
             this.Controls.Add(this.label1);
             this.Name = "FrmGestionEquipe";
@@ -97,8 +141,12 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cbxVisiteur;
-        private UC.UcVisiteur ucVisiteur1;
         private System.Windows.Forms.Button btnModifier;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Label lblInformation;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbxRegion;
+        private System.Windows.Forms.ComboBox cbxRole;
+        private System.Windows.Forms.Label label3;
     }
 }

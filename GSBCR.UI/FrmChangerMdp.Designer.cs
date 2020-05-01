@@ -37,7 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnModification = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.lblMessageError = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +61,7 @@
             // 
             this.txtbMdpActuel.Location = new System.Drawing.Point(151, 69);
             this.txtbMdpActuel.Name = "txtbMdpActuel";
+            this.txtbMdpActuel.PasswordChar = '*';
             this.txtbMdpActuel.Size = new System.Drawing.Size(177, 20);
             this.txtbMdpActuel.TabIndex = 3;
             // 
@@ -69,6 +69,7 @@
             // 
             this.txtbNouveauMdp.Location = new System.Drawing.Point(151, 108);
             this.txtbNouveauMdp.Name = "txtbNouveauMdp";
+            this.txtbNouveauMdp.PasswordChar = '*';
             this.txtbNouveauMdp.Size = new System.Drawing.Size(177, 20);
             this.txtbNouveauMdp.TabIndex = 4;
             // 
@@ -76,6 +77,7 @@
             // 
             this.txtbConfNouveauMdp.Location = new System.Drawing.Point(151, 152);
             this.txtbConfNouveauMdp.Name = "txtbConfNouveauMdp";
+            this.txtbConfNouveauMdp.PasswordChar = '*';
             this.txtbConfNouveauMdp.Size = new System.Drawing.Size(177, 20);
             this.txtbConfNouveauMdp.TabIndex = 5;
             // 
@@ -105,31 +107,26 @@
             this.btnModification.TabIndex = 8;
             this.btnModification.Text = "Modifier";
             this.btnModification.UseVisualStyleBackColor = true;
+            this.btnModification.Click += new System.EventHandler(this.btnModification_Click);
             // 
             // btnQuitter
             // 
+            this.btnQuitter.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnQuitter.Location = new System.Drawing.Point(213, 259);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(91, 50);
             this.btnQuitter.TabIndex = 9;
             this.btnQuitter.Text = "Annuler";
             this.btnQuitter.UseVisualStyleBackColor = true;
-            // 
-            // lblMessageError
-            // 
-            this.lblMessageError.AutoSize = true;
-            this.lblMessageError.Location = new System.Drawing.Point(137, 214);
-            this.lblMessageError.Name = "lblMessageError";
-            this.lblMessageError.Size = new System.Drawing.Size(82, 13);
-            this.lblMessageError.TabIndex = 10;
-            this.lblMessageError.Text = "lblMessageError";
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
             // FrmChangerMdp
             // 
+            this.AcceptButton = this.btnModification;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnQuitter;
             this.ClientSize = new System.Drawing.Size(345, 331);
-            this.Controls.Add(this.lblMessageError);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnModification);
             this.Controls.Add(this.label4);
@@ -157,6 +154,5 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnModification;
         private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.Label lblMessageError;
     }
 }

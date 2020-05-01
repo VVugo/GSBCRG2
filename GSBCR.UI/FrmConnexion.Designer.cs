@@ -83,6 +83,7 @@
             // 
             // btnQuitter
             // 
+            this.btnQuitter.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnQuitter.Location = new System.Drawing.Point(217, 338);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(134, 44);
@@ -106,6 +107,7 @@
             this.AcceptButton = this.btnConnexion;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnQuitter;
             this.ClientSize = new System.Drawing.Size(367, 393);
             this.Controls.Add(this.btnConnexion);
             this.Controls.Add(this.btnQuitter);
@@ -115,7 +117,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmConnexion";
-            this.Text = "FrmConnexion";
+            this.Text = "Connexion";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

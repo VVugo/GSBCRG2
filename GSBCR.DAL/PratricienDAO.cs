@@ -38,8 +38,6 @@ namespace GSBCR.DAL
             List<PRATICIEN> pas = null;
             using (var context = new GSB_VisiteEntities())
             {
-                //désactiver le chargement différé
-                //context.Configuration.LazyLoadingEnabled = false;
                 var req = from p in context.PRATICIENs.Include("LeType")
                           select p;
                 pas = req.ToList<PRATICIEN>();
@@ -55,7 +53,6 @@ namespace GSBCR.DAL
         /// <returns>List PRATICIEN</returns>
         public List<PRATICIEN> FindByType(string code)
         {
-            //Charger tous les praticiens d'un type
             List<PRATICIEN> pas = null;
             using ( var context = new GSB_VisiteEntities())
             {

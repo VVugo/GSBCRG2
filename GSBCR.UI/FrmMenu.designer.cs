@@ -666,7 +666,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMenu";
-            this.Text = "FrmMenuVisiteur";
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.FrmMenuVisiteur_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

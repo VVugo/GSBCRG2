@@ -20,11 +20,8 @@ namespace GSBCR.DAL
         public RAPPORT_VISITE FindById(string m, int n)
         {
             RAPPORT_VISITE rv =null;
-            // écrire et exécuter la requête Linq
             using (var context = new GSB_VisiteEntities())
             {
-                //désactiver le chargement différé
-                //context.Configuration.LazyLoadingEnabled = false;
                 var req = from r in context.RAPPORT_VISITE
                           where r.RAP_MATRICULE == m && r.RAP_NUM == n
                           select r;
@@ -33,40 +30,6 @@ namespace GSBCR.DAL
             }
             return rv;
 
-        }
-
-        /// <summary>
-        /// Permet de créer une liste avec tous les rapports de visite de visiteurs qui ont un certain état et une certaine région
-        /// </summary>
-        /// <param name="codeRegion">Code de la régions (string)</param>
-        /// <param name="lesEtats">Liste d'états (int)</param>
-        /// <returns></returns>
-        public List<RAPPORT_VISITE> FindByEtatEtRegion(List<int> lesEtats, string codeRegion)
-        {
-            List<RAPPORT_VISITE> lesRapports = null;
-            using (var context = new GSB_VisiteEntities())
-            {
-                int i = 0;
-                string reqStr = "select * from RAPPORT_VISITE r";
-                reqStr += " INNER JOIN VISITEUR v ON r.RAP_MATRICULE = v.VIS_MATRICULE";
-                reqStr += " INNER JOIN VAFFECTATION ON v.VIS_MATRICULE = vaf.VIS_MATRICULE";
-                reqStr += " INNER JOIN REGION reg ON vaf.REG_CODE = reg.REG_CODE";
-                reqStr += " where r.RAP_MATRICULE = " + codeRegion;
-                reqStr += " and r.RAP_ETAT in(";
-                i = 0;
-                foreach (int e in lesEtats)
-                {
-                    if (i != 0)
-                        reqStr += ",";
-                    else
-                        i++;
-                    reqStr += e;
-                }
-                reqStr += ")";
-                lesRapports = context.RAPPORT_VISITE.SqlQuery(reqStr).ToList<RAPPORT_VISITE>();
-
-            }
-            return lesRapports;
         }
 
         /// <summary>
@@ -80,8 +43,6 @@ namespace GSBCR.DAL
             List<RAPPORT_VISITE> lesRapports = null;
             using (var context = new GSB_VisiteEntities())
             {
-                //désactiver le chargement différé
-                //context.Configuration.LazyLoadingEnabled = false;
                 int i = 0;
                 string reqStr = "select * from RAPPORT_VISITE r where r.RAP_MATRICULE in(";
                 foreach (string m in lesMatricules)
@@ -119,9 +80,7 @@ namespace GSBCR.DAL
             {
                 try
                 {
-                    //ajout du rapport au contexte
                     context.RAPPORT_VISITE.Add(r);
-                    //sauvegarde du contexte
                     context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -142,9 +101,7 @@ namespace GSBCR.DAL
             {
                 try
                 {
-                    //mise à jour de l'état du rapport 
                     context.Entry(r).State = System.Data.EntityState.Modified;
-                    //sauvegarde du contexte
                     context.SaveChanges();
                 }
                 catch (Exception ex)

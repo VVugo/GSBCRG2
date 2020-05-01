@@ -22,7 +22,7 @@ namespace GSBCR.DAL
             MOTIF_VISITE lmv = null;
             using (var context = new GSB_VisiteEntities())
             {
-                var req = from m in context.MOTIF_VISITE.Include("LesRapports")
+                var req = from m in context.MOTIF_VISITE
                           where m.MOT_LIBEL == code
                           select m;
                 lmv = req.SingleOrDefault<MOTIF_VISITE>();

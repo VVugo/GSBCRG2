@@ -42,7 +42,7 @@ namespace GSBCR.BLL
         /// </summary>
         /// <param name="m">matricule Visiteur</param>
         /// <returns>List<RAPPORT_VISITE></returns>
-        public static List<RAPPORT_VISITE> ChargerRapportVisiteurEncours(String m)
+        public static List<RAPPORT_VISITE> ChargerRapportVisiteurEncours(string m)
         {
             List<RAPPORT_VISITE> lr;
             List<string> lm = new List<string>();
@@ -68,14 +68,16 @@ namespace GSBCR.BLL
         /// </summary>
         /// <param name="m">matricule Visiteur</param>
         /// <returns>List<RAPPORT_VISITE>/returns>
-        public static List<RAPPORT_VISITE> ChargerRapportVisiteurFinis(String m)
+        public static List<RAPPORT_VISITE> ChargerRapportVisiteurFinis(string m)
         {
             //Charger les rapports terminés (état = 2 ou 3) du visiteur
             List<RAPPORT_VISITE> rv;
             List<string> lm = new List<string>();
             lm.Add(m);
             List<int> le = new List<int>();
-            le.AddRange(new int[] { 2, 3 });
+            //le.AddRange(new int[] { 2, 3 });
+            le.Add(2);
+            le.Add(3);
             rv = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
             return rv;
         }
@@ -104,11 +106,16 @@ namespace GSBCR.BLL
         /// <returns>List<RAPPORT_VISITE>/returns>
         public static List<RAPPORT_VISITE> ChargerRapportRegionNonLus(string code)
         {
-            //Charger les rapports terminés et non lus (état = 2 ) des visiteurs d'une région
-            List<RAPPORT_VISITE> lr;
+            List<RAPPORT_VISITE> lr = new List<RAPPORT_VISITE>();
+            List<VISITEUR> lv = ChargerVisiteurByRegion(code);
+            List<string> lm = new List<string>();
             List<int> le = new List<int>();
             le.Add(2);
-            lr = new RapportVisiteDAO().FindByEtatEtRegion(le, code);
+            foreach (VISITEUR v in lv)
+            {
+                lm.Add(v.VIS_MATRICULE);
+            }
+            lr = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
             return lr;
         }
     
@@ -118,11 +125,17 @@ namespace GSBCR.BLL
         /// <returns>List<RAPPORT_VISITE>/returns>
         public static List<RAPPORT_VISITE> ChargerRapportRegionLus(string code)
         {
-            // Charger les rapports terminés (état = 3) des visiteurs d'une région
-            List<RAPPORT_VISITE> lr;
+            // Charger les rapports terminés(état = 3) des visiteurs d'une région
+            List<RAPPORT_VISITE> lr = new List<RAPPORT_VISITE>();
+            List<VISITEUR> lv = ChargerVisiteurByRegion(code);
+            List<string> lm = new List<string>();
             List<int> le = new List<int>();
             le.Add(3);
-            lr = new RapportVisiteDAO().FindByEtatEtRegion(le, code);
+            foreach (VISITEUR v in lv)
+            {
+                lm.Add(v.VIS_MATRICULE);
+            }
+            lr = new RapportVisiteDAO().FindByEtatEtVisiteur(lm, le);
             return lr;
         }
 
@@ -208,6 +221,42 @@ namespace GSBCR.BLL
             return pra;
         }
 
-        
+        /// <summary>
+        /// Permet de mettre à jour un visiteur dans la base de données 
+        /// </summary>
+        /// <param name="v">objet visiteur</param>
+        public static void MajVisiteur(VISITEUR v)
+        {
+            //ew VisiteurDAO().update(v);
+
+            try
+             {
+                 new VisiteurDAO().update(v);
+             }
+             catch (Exception ex)
+             {
+
+                 throw ex;
+             }
+
+        }
+
+        /// <summary>
+        /// Permet de créer un visiteur dans la base de données 
+        /// </summary>
+        /// <param name="v">objet visiteur</param>
+        public static void CreateVisiteur(VISITEUR v)
+        {
+            try
+            {
+                new VisiteurDAO().insert(v);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 }
