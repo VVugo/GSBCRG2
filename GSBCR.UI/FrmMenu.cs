@@ -110,14 +110,15 @@ namespace GSBCR.UI
 
         private void lesPraticiensToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsulterPraticien f = new FrmConsulterPraticien();
-            f.ShowDialog();
+            FrmConsulterPracticien f = new FrmConsulterPracticien();
+            f.Show();
         }
 
         private void mesRapportsValidésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmRapportValide f = new FrmRapportValide();
+            FrmRapportValide f = new FrmRapportValide(leVisiteur);
             f.Show();
+
         }
     }
 }

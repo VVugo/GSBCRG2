@@ -83,17 +83,17 @@
     <Compile Include="FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsulterPracticien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsulterPracticien.Designer.cs">
+      <DependentUpon>FrmConsulterPracticien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsulterMedoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmConsulterMedoc.Designer.cs">
       <DependentUpon>FrmConsulterMedoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmConsulterPraticien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmConsulterPraticien.Designer.cs">
-      <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGestionEquipe.cs">
       <SubType>Form</SubType>
@@ -163,11 +163,11 @@
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsulterPracticien.resx">
+      <DependentUpon>FrmConsulterPracticien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConsulterMedoc.resx">
       <DependentUpon>FrmConsulterMedoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsulterPraticien.resx">
-      <DependentUpon>FrmConsulterPraticien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionEquipe.resx">
       <DependentUpon>FrmGestionEquipe.cs</DependentUpon>

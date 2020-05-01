@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GSBCR.modele;
+using GSBCR.BLL;
+
 
 namespace GSBCR.UI
+
 {
     public partial class FrmRapportValide : Form
     {
-        public FrmRapportValide()
+        VISITEUR actuVisiteur;
+        public FrmRapportValide(VISITEUR leVisiteur)
         {
             InitializeComponent();
+            actuVisiteur = leVisiteur;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -84,6 +90,10 @@ namespace GSBCR.UI
             txtNumPra.Show();
             lblRapEtat.Show();
             txtRapEtat.Show();
+            lblCodeMed2.Show();
+            txtCodeMed2.Show();
+            bsRapportValide.DataSource = VisiteurManager.ChargerRapportVisiteurFinis(actuVisiteur.VIS_MATRICULE);
+            cbxRapNum.DataSource = bsRapportValide;
             
         }
 
@@ -94,6 +104,19 @@ namespace GSBCR.UI
 
         private void BtnDetail_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void cbxRapNum_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RAPPORT_VISITE actuRapport = (RAPPORT_VISITE)cbxRapNum.SelectedItem;
+            txtNumPra.Text = actuRapport.RAP_PRANUM.ToString();
+            txtDateVis.Text = actuRapport.RAP_DATVISIT.ToString();
+            txtMotifVis.Text = actuRapport.RAP_MOTIF;
+            txtRapEtat.Text = actuRapport.RAP_ETAT;
+            txtCodeMed.Text = actuRapport.RAP_MED1;
+            txtCodeMed2.Text = actuRapport.RAP_MED2;
+            //actuRapport.
 
         }
     }

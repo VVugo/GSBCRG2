@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.lblRapNum = new System.Windows.Forms.Label();
             this.lblPraNum = new System.Windows.Forms.Label();
@@ -42,6 +43,10 @@
             this.txtRapEtat = new System.Windows.Forms.TextBox();
             this.txtCodeMed = new System.Windows.Forms.TextBox();
             this.BtnDetail = new System.Windows.Forms.Button();
+            this.bsRapportValide = new System.Windows.Forms.BindingSource(this.components);
+            this.txtCodeMed2 = new System.Windows.Forms.TextBox();
+            this.lblCodeMed2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapportValide)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -121,6 +126,7 @@
             this.cbxRapNum.Name = "cbxRapNum";
             this.cbxRapNum.Size = new System.Drawing.Size(137, 24);
             this.cbxRapNum.TabIndex = 9;
+            this.cbxRapNum.SelectedIndexChanged += new System.EventHandler(this.cbxRapNum_SelectedIndexChanged);
             // 
             // txtNumPra
             // 
@@ -172,11 +178,29 @@
             this.BtnDetail.UseVisualStyleBackColor = true;
             this.BtnDetail.Click += new System.EventHandler(this.BtnDetail_Click);
             // 
+            // txtCodeMed2
+            // 
+            this.txtCodeMed2.Location = new System.Drawing.Point(368, 354);
+            this.txtCodeMed2.Name = "txtCodeMed2";
+            this.txtCodeMed2.Size = new System.Drawing.Size(137, 22);
+            this.txtCodeMed2.TabIndex = 16;
+            // 
+            // lblCodeMed2
+            // 
+            this.lblCodeMed2.AutoSize = true;
+            this.lblCodeMed2.Location = new System.Drawing.Point(213, 357);
+            this.lblCodeMed2.Name = "lblCodeMed2";
+            this.lblCodeMed2.Size = new System.Drawing.Size(133, 17);
+            this.lblCodeMed2.TabIndex = 17;
+            this.lblCodeMed2.Text = "Code medicament 2";
+            // 
             // FrmRapportValide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCodeMed2);
+            this.Controls.Add(this.txtCodeMed2);
             this.Controls.Add(this.BtnDetail);
             this.Controls.Add(this.txtCodeMed);
             this.Controls.Add(this.txtRapEtat);
@@ -194,6 +218,7 @@
             this.Name = "FrmRapportValide";
             this.Text = "FrmRapportValide";
             this.Load += new System.EventHandler(this.FrmRapportValide_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bsRapportValide)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,5 +239,8 @@
         private System.Windows.Forms.TextBox txtRapEtat;
         private System.Windows.Forms.TextBox txtCodeMed;
         private System.Windows.Forms.Button BtnDetail;
+        private System.Windows.Forms.BindingSource bsRapportValide;
+        private System.Windows.Forms.TextBox txtCodeMed2;
+        private System.Windows.Forms.Label lblCodeMed2;
     }
 }

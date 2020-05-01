@@ -19,7 +19,8 @@ namespace GSBCR.modele
             this.POSSEDERs = new HashSet<POSSEDER>();
             this.LesRapports = new HashSet<RAPPORT_VISITE>();
         }
-    
+        
+
         public short PRA_NUM { get; set; }
         public string PRA_NOM { get; set; }
         public string PRA_PRENOM { get; set; }
