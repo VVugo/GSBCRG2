@@ -114,5 +114,11 @@ namespace GSBCR.UI
             FrmConsulterPraticien f = new FrmConsulterPraticien();
             f.ShowDialog();
         }
+
+        private void mesRapportsValidésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRapportValide f = new FrmRapportValide();
+            f.Show();
+        }
     }
 }

@@ -112,35 +112,39 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(160, 37);
+            this.label1.Location = new System.Drawing.Point(213, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 33);
+            this.label1.Size = new System.Drawing.Size(467, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestion rapports de visite";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 108);
+            this.label2.Location = new System.Drawing.Point(35, 133);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(46, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 148);
+            this.label3.Location = new System.Drawing.Point(35, 182);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(46, 17);
             this.label3.TabIndex = 5;
             this.label3.Text = "label3";
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(445, 351);
+            this.btnQuitter.Location = new System.Drawing.Point(593, 432);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(188, 33);
+            this.btnQuitter.Size = new System.Drawing.Size(251, 41);
             this.btnQuitter.TabIndex = 6;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -148,6 +152,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mesDonnéesPersonnellesToolStripMenuItem,
             this.mesRapportsEnCoursToolStripMenuItem,
@@ -156,7 +161,7 @@
             this.monSecteurToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(669, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(892, 28);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -166,20 +171,20 @@
             this.modifierConsulterToolStripMenuItem,
             this.changerMonMotDePasseToolStripMenuItem});
             this.mesDonnéesPersonnellesToolStripMenuItem.Name = "mesDonnéesPersonnellesToolStripMenuItem";
-            this.mesDonnéesPersonnellesToolStripMenuItem.Size = new System.Drawing.Size(158, 20);
+            this.mesDonnéesPersonnellesToolStripMenuItem.Size = new System.Drawing.Size(197, 24);
             this.mesDonnéesPersonnellesToolStripMenuItem.Text = "Mes données personnelles";
             // 
             // modifierConsulterToolStripMenuItem
             // 
             this.modifierConsulterToolStripMenuItem.Name = "modifierConsulterToolStripMenuItem";
-            this.modifierConsulterToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.modifierConsulterToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
             this.modifierConsulterToolStripMenuItem.Text = "Modifier / Consulter";
             this.modifierConsulterToolStripMenuItem.Click += new System.EventHandler(this.modifierConsulterToolStripMenuItem_Click);
             // 
             // changerMonMotDePasseToolStripMenuItem
             // 
             this.changerMonMotDePasseToolStripMenuItem.Name = "changerMonMotDePasseToolStripMenuItem";
-            this.changerMonMotDePasseToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.changerMonMotDePasseToolStripMenuItem.Size = new System.Drawing.Size(274, 26);
             this.changerMonMotDePasseToolStripMenuItem.Text = "Changer mon mot de passe";
             this.changerMonMotDePasseToolStripMenuItem.Click += new System.EventHandler(this.changerMonMotDePasseToolStripMenuItem_Click);
             // 
@@ -189,20 +194,20 @@
             this.nouveauToolStripMenuItem,
             this.modifierToolStripMenuItem});
             this.mesRapportsEnCoursToolStripMenuItem.Name = "mesRapportsEnCoursToolStripMenuItem";
-            this.mesRapportsEnCoursToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
+            this.mesRapportsEnCoursToolStripMenuItem.Size = new System.Drawing.Size(169, 24);
             this.mesRapportsEnCoursToolStripMenuItem.Text = "Mes rapports en cours";
             // 
             // nouveauToolStripMenuItem
             // 
             this.nouveauToolStripMenuItem.Name = "nouveauToolStripMenuItem";
-            this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.nouveauToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.nouveauToolStripMenuItem.Text = "Nouveau";
             this.nouveauToolStripMenuItem.Click += new System.EventHandler(this.nouveauToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
             this.modifierToolStripMenuItem.Text = "Modifier / Consulter";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
@@ -213,25 +218,26 @@
             this.lesMedicamentsToolStripMenuItem,
             this.lesPraticiensToolStripMenuItem});
             this.consultationToolStripMenuItem.Name = "consultationToolStripMenuItem";
-            this.consultationToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.consultationToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.consultationToolStripMenuItem.Text = "Consultation";
             // 
             // mesRapportsValidésToolStripMenuItem
             // 
             this.mesRapportsValidésToolStripMenuItem.Name = "mesRapportsValidésToolStripMenuItem";
-            this.mesRapportsValidésToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.mesRapportsValidésToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.mesRapportsValidésToolStripMenuItem.Text = "Mes rapports validés";
+            this.mesRapportsValidésToolStripMenuItem.Click += new System.EventHandler(this.mesRapportsValidésToolStripMenuItem_Click);
             // 
             // lesMedicamentsToolStripMenuItem
             // 
             this.lesMedicamentsToolStripMenuItem.Name = "lesMedicamentsToolStripMenuItem";
-            this.lesMedicamentsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.lesMedicamentsToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.lesMedicamentsToolStripMenuItem.Text = "Les medicaments";
             // 
             // lesPraticiensToolStripMenuItem
             // 
             this.lesPraticiensToolStripMenuItem.Name = "lesPraticiensToolStripMenuItem";
-            this.lesPraticiensToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.lesPraticiensToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.lesPraticiensToolStripMenuItem.Text = "Les praticiens";
             this.lesPraticiensToolStripMenuItem.Click += new System.EventHandler(this.lesPraticiensToolStripMenuItem_Click);
             // 
@@ -241,20 +247,20 @@
             this.rapportsNonConsultésToolStripMenuItem,
             this.listeDesVisiteursToolStripMenuItem});
             this.maRégionToolStripMenuItem.Name = "maRégionToolStripMenuItem";
-            this.maRégionToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
+            this.maRégionToolStripMenuItem.Size = new System.Drawing.Size(91, 24);
             this.maRégionToolStripMenuItem.Text = "Ma région";
             this.maRégionToolStripMenuItem.Visible = false;
             // 
             // rapportsNonConsultésToolStripMenuItem
             // 
             this.rapportsNonConsultésToolStripMenuItem.Name = "rapportsNonConsultésToolStripMenuItem";
-            this.rapportsNonConsultésToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.rapportsNonConsultésToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
             this.rapportsNonConsultésToolStripMenuItem.Text = "Rapports non consultés";
             // 
             // listeDesVisiteursToolStripMenuItem
             // 
             this.listeDesVisiteursToolStripMenuItem.Name = "listeDesVisiteursToolStripMenuItem";
-            this.listeDesVisiteursToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.listeDesVisiteursToolStripMenuItem.Size = new System.Drawing.Size(246, 26);
             this.listeDesVisiteursToolStripMenuItem.Text = "Liste des visiteurs";
             // 
             // monSecteurToolStripMenuItem
@@ -264,49 +270,52 @@
             this.statistiquesSecteurToolStripMenuItem,
             this.nouveauVisiteurDéléguéToolStripMenuItem});
             this.monSecteurToolStripMenuItem.Name = "monSecteurToolStripMenuItem";
-            this.monSecteurToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.monSecteurToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.monSecteurToolStripMenuItem.Text = "Mon secteur";
             this.monSecteurToolStripMenuItem.Visible = false;
             // 
             // gestionÉquipeToolStripMenuItem
             // 
             this.gestionÉquipeToolStripMenuItem.Name = "gestionÉquipeToolStripMenuItem";
-            this.gestionÉquipeToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.gestionÉquipeToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.gestionÉquipeToolStripMenuItem.Text = "Gestion équipe";
             // 
             // statistiquesSecteurToolStripMenuItem
             // 
             this.statistiquesSecteurToolStripMenuItem.Name = "statistiquesSecteurToolStripMenuItem";
-            this.statistiquesSecteurToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.statistiquesSecteurToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.statistiquesSecteurToolStripMenuItem.Text = "Statistiques secteur";
             // 
             // nouveauVisiteurDéléguéToolStripMenuItem
             // 
             this.nouveauVisiteurDéléguéToolStripMenuItem.Name = "nouveauVisiteurDéléguéToolStripMenuItem";
-            this.nouveauVisiteurDéléguéToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.nouveauVisiteurDéléguéToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.nouveauVisiteurDéléguéToolStripMenuItem.Text = "Nouveau visiteur / délégué";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(166, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(221, 145);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(421, 227);
+            this.pictureBox1.Size = new System.Drawing.Size(561, 279);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(279, 106);
+            this.panel1.Location = new System.Drawing.Point(372, 130);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(8, 8);
+            this.panel1.Size = new System.Drawing.Size(11, 10);
             this.panel1.TabIndex = 9;
             // 
             // btnDeconnexion
             // 
-            this.btnDeconnexion.Location = new System.Drawing.Point(29, 351);
+            this.btnDeconnexion.Location = new System.Drawing.Point(39, 432);
+            this.btnDeconnexion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeconnexion.Name = "btnDeconnexion";
-            this.btnDeconnexion.Size = new System.Drawing.Size(188, 33);
+            this.btnDeconnexion.Size = new System.Drawing.Size(251, 41);
             this.btnDeconnexion.TabIndex = 10;
             this.btnDeconnexion.Text = "Déconnexion";
             this.btnDeconnexion.UseVisualStyleBackColor = true;
@@ -643,9 +652,9 @@
             // 
             // FrmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 411);
+            this.ClientSize = new System.Drawing.Size(892, 506);
             this.Controls.Add(this.btnDeconnexion);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
@@ -655,6 +664,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMenu";
             this.Text = "FrmMenuVisiteur";
             this.Load += new System.EventHandler(this.FrmMenuVisiteur_Load);
