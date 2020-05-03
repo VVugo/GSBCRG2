@@ -142,7 +142,7 @@
             // btnQuitter
             // 
             this.btnQuitter.Location = new System.Drawing.Point(593, 432);
-            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(251, 41);
             this.btnQuitter.TabIndex = 6;
@@ -233,6 +233,7 @@
             this.lesMedicamentsToolStripMenuItem.Name = "lesMedicamentsToolStripMenuItem";
             this.lesMedicamentsToolStripMenuItem.Size = new System.Drawing.Size(229, 26);
             this.lesMedicamentsToolStripMenuItem.Text = "Les medicaments";
+            this.lesMedicamentsToolStripMenuItem.Click += new System.EventHandler(this.lesMedicamentsToolStripMenuItem_Click);
             // 
             // lesPraticiensToolStripMenuItem
             // 
@@ -296,7 +297,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(221, 145);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(561, 279);
             this.pictureBox1.TabIndex = 8;
@@ -305,7 +306,7 @@
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(372, 130);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(11, 10);
             this.panel1.TabIndex = 9;
@@ -313,7 +314,7 @@
             // btnDeconnexion
             // 
             this.btnDeconnexion.Location = new System.Drawing.Point(39, 432);
-            this.btnDeconnexion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeconnexion.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeconnexion.Name = "btnDeconnexion";
             this.btnDeconnexion.Size = new System.Drawing.Size(251, 41);
             this.btnDeconnexion.TabIndex = 10;
@@ -664,7 +665,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMenu";
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.FrmMenuVisiteur_Load);

@@ -120,5 +120,11 @@ namespace GSBCR.UI
             f.Show();
 
         }
+
+        private void lesMedicamentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsulterMedoc f = new FrmConsulterMedoc();
+            f.Show();
+        }
     }
 }

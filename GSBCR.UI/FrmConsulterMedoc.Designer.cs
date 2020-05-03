@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxMedicament = new System.Windows.Forms.ComboBox();
             this.btnQuitter = new System.Windows.Forms.Button();
             this.ucMedicament1 = new GSBCR.UC.UcMedicament();
             this.bsMedicament = new System.Windows.Forms.BindingSource(this.components);
@@ -40,25 +40,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 20);
+            this.label1.Location = new System.Drawing.Point(31, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 13);
+            this.label1.Size = new System.Drawing.Size(168, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "Consulter un médicament";
             // 
-            // comboBox1
+            // cbxMedicament
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(165, 17);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cbxMedicament.FormattingEnabled = true;
+            this.cbxMedicament.Location = new System.Drawing.Point(220, 21);
+            this.cbxMedicament.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxMedicament.Name = "cbxMedicament";
+            this.cbxMedicament.Size = new System.Drawing.Size(160, 24);
+            this.cbxMedicament.TabIndex = 2;
+            this.cbxMedicament.SelectedIndexChanged += new System.EventHandler(this.cbxMedicament_SelectedIndexChanged);
             // 
             // btnQuitter
             // 
-            this.btnQuitter.Location = new System.Drawing.Point(241, 392);
+            this.btnQuitter.Location = new System.Drawing.Point(321, 482);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuitter.Name = "btnQuitter";
-            this.btnQuitter.Size = new System.Drawing.Size(91, 46);
+            this.btnQuitter.Size = new System.Drawing.Size(121, 57);
             this.btnQuitter.TabIndex = 3;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
@@ -66,20 +70,22 @@
             // ucMedicament1
             // 
             this.ucMedicament1.LeMedicament = null;
-            this.ucMedicament1.Location = new System.Drawing.Point(2, 44);
+            this.ucMedicament1.Location = new System.Drawing.Point(34, 54);
+            this.ucMedicament1.Margin = new System.Windows.Forms.Padding(5);
             this.ucMedicament1.Name = "ucMedicament1";
-            this.ucMedicament1.Size = new System.Drawing.Size(380, 364);
+            this.ucMedicament1.Size = new System.Drawing.Size(477, 448);
             this.ucMedicament1.TabIndex = 0;
             // 
             // FrmConsulterMedoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 450);
+            this.ClientSize = new System.Drawing.Size(459, 554);
             this.Controls.Add(this.btnQuitter);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxMedicament);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ucMedicament1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmConsulterMedoc";
             this.Text = "FrmConsulterMedoc";
             ((System.ComponentModel.ISupportInitialize)(this.bsMedicament)).EndInit();
@@ -93,7 +99,7 @@
         private UC.UcMedicament ucMedicament1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bsMedicament;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxMedicament;
         private System.Windows.Forms.Button btnQuitter;
     }
 }
