@@ -26,6 +26,13 @@ namespace GSBCR.UI
         {
             MEDICAMENT selectedMedicament = (MEDICAMENT)cbxMedicament.SelectedItem;
             ucMedicament1.LeMedicament = selectedMedicament;
+            
+            
+        }
+
+        private void btnQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

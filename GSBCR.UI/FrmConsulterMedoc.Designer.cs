@@ -66,6 +66,7 @@
             this.btnQuitter.TabIndex = 3;
             this.btnQuitter.Text = "Quitter";
             this.btnQuitter.UseVisualStyleBackColor = true;
+            this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
             // ucMedicament1
             // 

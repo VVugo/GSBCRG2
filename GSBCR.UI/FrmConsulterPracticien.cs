@@ -20,7 +20,7 @@ namespace GSBCR.UI
             InitializeComponent();
             bsPracticien.DataSource = VisiteurManager.ChargerPraticiens();
             cbxPracticien.DataSource = bsPracticien;
-            cbxPracticien.DisplayMember = "PRA_NOM" + " " + "PRA_PRENOM";
+            cbxPracticien.DisplayMember = "PRA_NOM";
         }
 
         private void cbxPracticien_SelectedIndexChanged(object sender, EventArgs e)
