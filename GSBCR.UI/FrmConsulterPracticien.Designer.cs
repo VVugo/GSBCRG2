@@ -34,6 +34,7 @@
             this.bsPracticien = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.btnConsulter = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsPracticien)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,9 +76,20 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnConsulter
+            // 
+            this.btnConsulter.Location = new System.Drawing.Point(483, 25);
+            this.btnConsulter.Name = "btnConsulter";
+            this.btnConsulter.Size = new System.Drawing.Size(90, 24);
+            this.btnConsulter.TabIndex = 4;
+            this.btnConsulter.Text = "Consulter";
+            this.btnConsulter.UseVisualStyleBackColor = true;
+            this.btnConsulter.Click += new System.EventHandler(this.btnConsulter_Click);
+            // 
             // FrmConsulterPracticien
             // 
             this.ClientSize = new System.Drawing.Size(654, 492);
+            this.Controls.Add(this.btnConsulter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxPracticien);
@@ -96,5 +108,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource bsPracticien;
+        private System.Windows.Forms.Button btnConsulter;
     }
 }

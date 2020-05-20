@@ -258,5 +258,31 @@ namespace GSBCR.BLL
             }
         }
 
+        public static List<RAPPORT_VISITE> GetRapportValideByMedoc(String numMed)
+        {
+            try
+            {
+               return new RapportVisiteDAO().FindByMedoc(numMed);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public static List<RAPPORT_VISITE> GetRapportValideByPratricien(String numPra)
+        {
+            try
+            {
+                return new RapportVisiteDAO().FindBypratricien(numPra);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 }

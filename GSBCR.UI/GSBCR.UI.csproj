@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmDetailMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetailMedicament.Designer.cs">
+      <DependentUpon>FrmDetailMedicament.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmChangerMdp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,12 @@
     </Compile>
     <Compile Include="FrmConsulterMedoc.Designer.cs">
       <DependentUpon>FrmConsulterMedoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDetailPracticien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDetailPracticien.Designer.cs">
+      <DependentUpon>FrmDetailPracticien.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGestionEquipe.cs">
       <SubType>Form</SubType>
@@ -168,6 +180,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsulterMedoc.resx">
       <DependentUpon>FrmConsulterMedoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetailMedicament.resx">
+      <DependentUpon>FrmDetailMedicament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDetailPracticien.resx">
+      <DependentUpon>FrmDetailPracticien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGestionEquipe.resx">
       <DependentUpon>FrmGestionEquipe.cs</DependentUpon>

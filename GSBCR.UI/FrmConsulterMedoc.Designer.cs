@@ -34,6 +34,7 @@
             this.btnQuitter = new System.Windows.Forms.Button();
             this.ucMedicament1 = new GSBCR.UC.UcMedicament();
             this.bsMedicament = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsMedicament)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,11 +78,22 @@
             this.ucMedicament1.Size = new System.Drawing.Size(477, 448);
             this.ucMedicament1.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(416, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Consulter";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmConsulterMedoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 554);
+            this.ClientSize = new System.Drawing.Size(576, 554);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.cbxMedicament);
             this.Controls.Add(this.label1);
@@ -102,5 +114,6 @@
         private System.Windows.Forms.BindingSource bsMedicament;
         private System.Windows.Forms.ComboBox cbxMedicament;
         private System.Windows.Forms.Button btnQuitter;
+        private System.Windows.Forms.Button button1;
     }
 }

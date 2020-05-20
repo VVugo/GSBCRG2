@@ -14,6 +14,7 @@ namespace GSBCR.UI
 {
     public partial class FrmConsulterMedoc : Form
     {
+        public MEDICAMENT selectedMedicament;
         public FrmConsulterMedoc()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace GSBCR.UI
 
         private void cbxMedicament_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MEDICAMENT selectedMedicament = (MEDICAMENT)cbxMedicament.SelectedItem;
+            selectedMedicament = (MEDICAMENT)cbxMedicament.SelectedItem;
             ucMedicament1.LeMedicament = selectedMedicament;
             
             
@@ -33,6 +34,13 @@ namespace GSBCR.UI
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            FrmDetailMedicament f = new FrmDetailMedicament(selectedMedicament);
+            f.Show();
         }
     }
 }

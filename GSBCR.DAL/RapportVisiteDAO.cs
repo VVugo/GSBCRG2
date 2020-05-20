@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using GSBCR.modele;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 
 namespace GSBCR.DAL
 {
@@ -111,6 +112,32 @@ namespace GSBCR.DAL
                 }
                 
             }
+        }
+
+        public List<RAPPORT_VISITE> FindByMedoc(String numMedoc)
+        {
+            List<RAPPORT_VISITE> rv = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                string rqt = "select * from RAPPORT_VISITE where RAP_MED1 like @NUM_MED or RAP_MED2 like @NUM_MED ";
+                rv = context.RAPPORT_VISITE.SqlQuery(rqt, new SqlParameter("NUM_MED", numMedoc)).ToList<RAPPORT_VISITE>();
+
+            }
+            return rv;
+
+        }
+
+        public List<RAPPORT_VISITE> FindBypratricien(String numPra)
+        {
+            List<RAPPORT_VISITE> rv = null;
+            using (var context = new GSB_VisiteEntities())
+            {
+                string rqt = "select * from RAPPORT_VISITE where RAP_PRANUM like @NUM_PRA";
+                rv = context.RAPPORT_VISITE.SqlQuery(rqt, new SqlParameter("NUM_PRA", numPra)).ToList<RAPPORT_VISITE>();
+
+            }
+            return rv;
+
         }
 
 
