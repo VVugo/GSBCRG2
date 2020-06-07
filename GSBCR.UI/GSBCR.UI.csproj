@@ -155,6 +155,12 @@
     <Compile Include="FrmRegionDetails.Designer.cs">
       <DependentUpon>FrmRegionDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmResponsableCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmResponsableCreation.Designer.cs">
+      <DependentUpon>FrmResponsableCreation.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSaisir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     <EmbeddedResource Include="FrmRegionDetails.resx">
       <DependentUpon>FrmRegionDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmResponsableCreation.resx">
+      <DependentUpon>FrmResponsableCreation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSaisir.resx">
       <DependentUpon>FrmSaisir.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,6 +242,7 @@
     <None Include="Properties\DataSources\GSBCR.modele.PRATICIEN.datasource" />
     <None Include="Properties\DataSources\GSBCR.modele.RAPPORT_VISITE.datasource" />
     <None Include="Properties\DataSources\GSBCR.modele.REGION.datasource" />
+    <None Include="Properties\DataSources\GSBCR.modele.SECTEUR.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

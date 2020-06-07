@@ -16,16 +16,18 @@ namespace GSBCR.UI
     {
         public PRATICIEN selectedPra;
         public List<RAPPORT_VISITE> RapportPra;
+        public string mat;
         public FrmDetailPracticien()
         {
             InitializeComponent();
         }
 
-        public FrmDetailPracticien(PRATICIEN selectedPra)
+        public FrmDetailPracticien(PRATICIEN selectedPra, string mat)
         {
             InitializeComponent();
             this.selectedPra = selectedPra;
-            RapportPra = VisiteurManager.GetRapportValideByPratricien(selectedPra.PRA_NUM.ToString());
+            this.mat = mat;
+            RapportPra = VisiteurManager.GetRapportValideByPratricien(selectedPra.PRA_NUM.ToString(),mat);
             bsRapportPra.DataSource = RapportPra;
             dgvRapportPra.DataSource = bsRapportPra;
             txtBoxRapportPra.Text = selectedPra.PRA_NOM;

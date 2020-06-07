@@ -110,7 +110,7 @@ namespace GSBCR.UI
 
         private void lesPraticiensToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsulterPracticien f = new FrmConsulterPracticien();
+            FrmConsulterPracticien f = new FrmConsulterPracticien(leVisiteur.VIS_MATRICULE);
             f.Show();
         }
 
@@ -123,7 +123,13 @@ namespace GSBCR.UI
 
         private void lesMedicamentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsulterMedoc f = new FrmConsulterMedoc();
+            FrmConsulterMedoc f = new FrmConsulterMedoc(leVisiteur.VIS_MATRICULE);
+            f.Show();
+        }
+
+        private void nouveauVisiteurDéléguéToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmResponsableCreation f = new FrmResponsableCreation();
             f.Show();
         }
     }

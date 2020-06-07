@@ -46,5 +46,26 @@ namespace GSBCR.UI
             
 
         }
+
+        private void btnPraticien_Click(object sender, EventArgs e)
+        {
+            RAPPORT_VISITE selectedRap = (RAPPORT_VISITE)bsRapportValide.Current;
+            FrmConsulterPracticien frmConsulterPracticien = new FrmConsulterPracticien(actuVisiteur.VIS_MATRICULE, VisiteurManager.ChargerLePraticien(selectedRap.RAP_PRANUM));
+            frmConsulterPracticien.Show();
+        }
+
+        private void btnMedicament1_Click(object sender, EventArgs e)
+        {
+            RAPPORT_VISITE selectedRap = (RAPPORT_VISITE)bsRapportValide.Current;
+            FrmConsulterMedoc frmConsulterMedicament = new FrmConsulterMedoc(actuVisiteur.VIS_MATRICULE, VisiteurManager.ChargerLeMedicament(selectedRap.RAP_MED1));
+            frmConsulterMedicament.Show();
+        }
+
+        private void btnMedicament2_Click(object sender, EventArgs e)
+        {
+            RAPPORT_VISITE selectedRap = (RAPPORT_VISITE)bsRapportValide.Current;
+            FrmConsulterMedoc frmConsulterMedicament = new FrmConsulterMedoc(actuVisiteur.VIS_MATRICULE, VisiteurManager.ChargerLeMedicament(selectedRap.RAP_MED2));
+            frmConsulterMedicament.Show();
+        }
     }
     }

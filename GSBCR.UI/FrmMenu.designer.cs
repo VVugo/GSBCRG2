@@ -292,6 +292,7 @@
             this.nouveauVisiteurDéléguéToolStripMenuItem.Name = "nouveauVisiteurDéléguéToolStripMenuItem";
             this.nouveauVisiteurDéléguéToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.nouveauVisiteurDéléguéToolStripMenuItem.Text = "Nouveau visiteur / délégué";
+            this.nouveauVisiteurDéléguéToolStripMenuItem.Click += new System.EventHandler(this.nouveauVisiteurDéléguéToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 

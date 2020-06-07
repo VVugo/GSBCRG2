@@ -16,17 +16,19 @@ namespace GSBCR.UI
     {
         public MEDICAMENT Medoc;
         public List<RAPPORT_VISITE> listeRapport = new List<RAPPORT_VISITE>();
+        public string mat;
 
         public FrmDetailMedicament()
         {
             InitializeComponent();
         }
 
-        public FrmDetailMedicament(MEDICAMENT Medoc)
+        public FrmDetailMedicament(MEDICAMENT Medoc, string mat)
         {
             InitializeComponent();
             this.Medoc = Medoc;
-            bsRapportMed.DataSource = VisiteurManager.GetRapportValideByMedoc(Medoc.MED_DEPOTLEGAL);
+            this.mat = mat;
+            bsRapportMed.DataSource = VisiteurManager.GetRapportValideByMedoc(Medoc.MED_DEPOTLEGAL, mat);
             dgvRapportMed.DataSource = bsRapportMed;
             txtBoxMed.Text = Medoc.MED_NOMCOMMERCIAL;
         }

@@ -258,11 +258,11 @@ namespace GSBCR.BLL
             }
         }
 
-        public static List<RAPPORT_VISITE> GetRapportValideByMedoc(String numMed)
+        public static List<RAPPORT_VISITE> GetRapportValideByMedoc(String numMed, string mat)
         {
             try
             {
-               return new RapportVisiteDAO().FindByMedoc(numMed);
+               return new RapportVisiteDAO().FindByMedoc(numMed, mat);
             }
             catch (Exception ex)
             {
@@ -271,11 +271,11 @@ namespace GSBCR.BLL
             }
         }
 
-        public static List<RAPPORT_VISITE> GetRapportValideByPratricien(String numPra)
+        public static List<RAPPORT_VISITE> GetRapportValideByPratricien(String numPra, string mat)
         {
             try
             {
-                return new RapportVisiteDAO().FindBypratricien(numPra);
+                return new RapportVisiteDAO().FindBypratricien(numPra, mat);
             }
             catch (Exception ex)
             {
@@ -283,6 +283,34 @@ namespace GSBCR.BLL
                 throw ex;
             }
         }
+
+        public static List<REGION> GetRegion()
+        {
+            try
+            {
+                return new RegionDAO().FindAll();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public static List<SECTEUR> GetSecteur()
+        {
+            try
+            {
+                return new SecteurDAO().FindAll();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
 
     }
 }

@@ -114,26 +114,26 @@ namespace GSBCR.DAL
             }
         }
 
-        public List<RAPPORT_VISITE> FindByMedoc(String numMedoc)
+        public List<RAPPORT_VISITE> FindByMedoc(String numMedoc, String mat)
         {
             List<RAPPORT_VISITE> rv = null;
             using (var context = new GSB_VisiteEntities())
             {
-                string rqt = "select * from RAPPORT_VISITE where RAP_MED1 like @NUM_MED or RAP_MED2 like @NUM_MED ";
-                rv = context.RAPPORT_VISITE.SqlQuery(rqt, new SqlParameter("NUM_MED", numMedoc)).ToList<RAPPORT_VISITE>();
+                string rqt = "select * from RAPPORT_VISITE where (RAP_MED1 like @NUM_MED or RAP_MED2 like @NUM_MED) and RAP_MATRICULE like @mat ";
+                rv = context.RAPPORT_VISITE.SqlQuery(rqt, new SqlParameter("NUM_MED", numMedoc),new SqlParameter("mat", mat)).ToList<RAPPORT_VISITE>();
 
             }
             return rv;
 
         }
 
-        public List<RAPPORT_VISITE> FindBypratricien(String numPra)
+        public List<RAPPORT_VISITE> FindBypratricien(String numPra, String mat)
         {
             List<RAPPORT_VISITE> rv = null;
             using (var context = new GSB_VisiteEntities())
             {
-                string rqt = "select * from RAPPORT_VISITE where RAP_PRANUM like @NUM_PRA";
-                rv = context.RAPPORT_VISITE.SqlQuery(rqt, new SqlParameter("NUM_PRA", numPra)).ToList<RAPPORT_VISITE>();
+                string rqt = "select * from RAPPORT_VISITE where RAP_PRANUM like @NUM_PRA and RAP_MATRICULE like @mat";
+                rv = context.RAPPORT_VISITE.SqlQuery(rqt, new SqlParameter("NUM_PRA", numPra), new SqlParameter("mat", mat)).ToList<RAPPORT_VISITE>();
 
             }
             return rv;

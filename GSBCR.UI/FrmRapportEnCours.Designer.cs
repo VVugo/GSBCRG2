@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnMed2 = new System.Windows.Forms.Button();
+            this.btnMed1 = new System.Windows.Forms.Button();
+            this.btnPraticien = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,12 +72,15 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.btnMed2);
+            this.splitContainer1.Panel1.Controls.Add(this.btnMed1);
+            this.splitContainer1.Panel1.Controls.Add(this.btnPraticien);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.label2);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
@@ -84,10 +90,40 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgvRapportEnCours);
-            this.splitContainer1.Size = new System.Drawing.Size(1137, 506);
-            this.splitContainer1.SplitterDistance = 123;
+            this.splitContainer1.Size = new System.Drawing.Size(1135, 506);
+            this.splitContainer1.SplitterDistance = 122;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // btnMed2
+            // 
+            this.btnMed2.Location = new System.Drawing.Point(966, 22);
+            this.btnMed2.Name = "btnMed2";
+            this.btnMed2.Size = new System.Drawing.Size(105, 26);
+            this.btnMed2.TabIndex = 7;
+            this.btnMed2.Text = "Info med2";
+            this.btnMed2.UseVisualStyleBackColor = true;
+            this.btnMed2.Click += new System.EventHandler(this.btnMed2_Click);
+            // 
+            // btnMed1
+            // 
+            this.btnMed1.Location = new System.Drawing.Point(832, 22);
+            this.btnMed1.Name = "btnMed1";
+            this.btnMed1.Size = new System.Drawing.Size(91, 26);
+            this.btnMed1.TabIndex = 6;
+            this.btnMed1.Text = "Info med1";
+            this.btnMed1.UseVisualStyleBackColor = true;
+            this.btnMed1.Click += new System.EventHandler(this.btnMed1_Click);
+            // 
+            // btnPraticien
+            // 
+            this.btnPraticien.Location = new System.Drawing.Point(697, 18);
+            this.btnPraticien.Name = "btnPraticien";
+            this.btnPraticien.Size = new System.Drawing.Size(106, 48);
+            this.btnPraticien.TabIndex = 5;
+            this.btnPraticien.Text = "Info Practicien";
+            this.btnPraticien.UseVisualStyleBackColor = true;
+            this.btnPraticien.Click += new System.EventHandler(this.btnPraticien_Click);
             // 
             // label3
             // 
@@ -123,7 +159,7 @@
             // btnQuitter
             // 
             this.btnQuitter.Location = new System.Drawing.Point(941, 76);
-            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnQuitter.Margin = new System.Windows.Forms.Padding(4);
             this.btnQuitter.Name = "btnQuitter";
             this.btnQuitter.Size = new System.Drawing.Size(100, 28);
             this.btnQuitter.TabIndex = 1;
@@ -134,7 +170,7 @@
             // btnModifier
             // 
             this.btnModifier.Location = new System.Drawing.Point(807, 76);
-            this.btnModifier.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModifier.Margin = new System.Windows.Forms.Padding(4);
             this.btnModifier.Name = "btnModifier";
             this.btnModifier.Size = new System.Drawing.Size(100, 28);
             this.btnModifier.TabIndex = 0;
@@ -172,11 +208,11 @@
             this.dgvRapportEnCours.DataSource = this.bsRapportEnCours;
             this.dgvRapportEnCours.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRapportEnCours.Location = new System.Drawing.Point(0, 0);
-            this.dgvRapportEnCours.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvRapportEnCours.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRapportEnCours.Name = "dgvRapportEnCours";
             this.dgvRapportEnCours.RowHeadersWidth = 51;
             this.dgvRapportEnCours.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRapportEnCours.Size = new System.Drawing.Size(1137, 378);
+            this.dgvRapportEnCours.Size = new System.Drawing.Size(1135, 379);
             this.dgvRapportEnCours.TabIndex = 0;
             this.dgvRapportEnCours.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRapportEnCours_CellDoubleClick);
             // 
@@ -361,9 +397,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1137, 506);
+            this.ClientSize = new System.Drawing.Size(1135, 506);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRapportEnCours";
             this.Text = "FrmRapportEnCours";
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -407,5 +443,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn leVisiteurDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnMed2;
+        private System.Windows.Forms.Button btnMed1;
+        private System.Windows.Forms.Button btnPraticien;
     }
 }

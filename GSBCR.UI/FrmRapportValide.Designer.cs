@@ -45,6 +45,9 @@
             this.bsRapportValide = new System.Windows.Forms.BindingSource(this.components);
             this.txtCodeMed2 = new System.Windows.Forms.TextBox();
             this.lblCodeMed2 = new System.Windows.Forms.Label();
+            this.btnMedicament1 = new System.Windows.Forms.Button();
+            this.btnPraticien = new System.Windows.Forms.Button();
+            this.btnMedicament2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsRapportValide)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,11 +179,44 @@
             this.lblCodeMed2.TabIndex = 17;
             this.lblCodeMed2.Text = "Code medicament 2";
             // 
+            // btnMedicament1
+            // 
+            this.btnMedicament1.Location = new System.Drawing.Point(301, 394);
+            this.btnMedicament1.Name = "btnMedicament1";
+            this.btnMedicament1.Size = new System.Drawing.Size(107, 23);
+            this.btnMedicament1.TabIndex = 18;
+            this.btnMedicament1.Text = "Medicament1";
+            this.btnMedicament1.UseVisualStyleBackColor = true;
+            this.btnMedicament1.Click += new System.EventHandler(this.btnMedicament1_Click);
+            // 
+            // btnPraticien
+            // 
+            this.btnPraticien.Location = new System.Drawing.Point(171, 394);
+            this.btnPraticien.Name = "btnPraticien";
+            this.btnPraticien.Size = new System.Drawing.Size(102, 23);
+            this.btnPraticien.TabIndex = 19;
+            this.btnPraticien.Text = "Praticien";
+            this.btnPraticien.UseVisualStyleBackColor = true;
+            this.btnPraticien.Click += new System.EventHandler(this.btnPraticien_Click);
+            // 
+            // btnMedicament2
+            // 
+            this.btnMedicament2.Location = new System.Drawing.Point(435, 394);
+            this.btnMedicament2.Name = "btnMedicament2";
+            this.btnMedicament2.Size = new System.Drawing.Size(107, 23);
+            this.btnMedicament2.TabIndex = 20;
+            this.btnMedicament2.Text = "Medicament2";
+            this.btnMedicament2.UseVisualStyleBackColor = true;
+            this.btnMedicament2.Click += new System.EventHandler(this.btnMedicament2_Click);
+            // 
             // FrmRapportValide
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMedicament2);
+            this.Controls.Add(this.btnPraticien);
+            this.Controls.Add(this.btnMedicament1);
             this.Controls.Add(this.lblCodeMed2);
             this.Controls.Add(this.txtCodeMed2);
             this.Controls.Add(this.txtCodeMed);
@@ -221,5 +257,8 @@
         private System.Windows.Forms.BindingSource bsRapportValide;
         private System.Windows.Forms.TextBox txtCodeMed2;
         private System.Windows.Forms.Label lblCodeMed2;
+        private System.Windows.Forms.Button btnMedicament1;
+        private System.Windows.Forms.Button btnPraticien;
+        private System.Windows.Forms.Button btnMedicament2;
     }
 }

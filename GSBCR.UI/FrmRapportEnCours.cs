@@ -57,5 +57,26 @@ namespace GSBCR.UI
                 bsRapportEnCours.Add(r);
             }
         }
+
+        private void btnPraticien_Click(object sender, EventArgs e)
+        {
+            RAPPORT_VISITE selectedRap = (RAPPORT_VISITE)bsRapportEnCours.Current;
+            FrmConsulterPracticien frmConsulterPracticien = new FrmConsulterPracticien(leVisiteur.VIS_MATRICULE, VisiteurManager.ChargerLePraticien(selectedRap.RAP_PRANUM));
+            frmConsulterPracticien.Show();
+        }
+
+        private void btnMed1_Click(object sender, EventArgs e)
+        {
+            RAPPORT_VISITE selectedRap = (RAPPORT_VISITE)bsRapportEnCours.Current;
+            FrmConsulterMedoc frmConsulterMedicament = new FrmConsulterMedoc(leVisiteur.VIS_MATRICULE, VisiteurManager.ChargerLeMedicament(selectedRap.RAP_MED1));
+            frmConsulterMedicament.Show();
+        }
+
+        private void btnMed2_Click(object sender, EventArgs e)
+        {
+            RAPPORT_VISITE selectedRap = (RAPPORT_VISITE)bsRapportEnCours.Current;
+            FrmConsulterMedoc frmConsulterMedicament = new FrmConsulterMedoc(leVisiteur.VIS_MATRICULE, VisiteurManager.ChargerLeMedicament(selectedRap.RAP_MED2));
+            frmConsulterMedicament.Show();
+        }
     }
 }

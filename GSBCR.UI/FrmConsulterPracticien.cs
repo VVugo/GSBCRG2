@@ -17,6 +17,7 @@ namespace GSBCR.UI
     {
 
         PRATICIEN selectedPraticien;
+        string mat;
         public FrmConsulterPracticien()
         {
             InitializeComponent();
@@ -25,6 +26,30 @@ namespace GSBCR.UI
             cbxPracticien.DisplayMember = "PRA_NOM";
             selectedPraticien = (PRATICIEN)cbxPracticien.SelectedItem;
             ucPraticien1.LePraticien = selectedPraticien;
+        }
+
+        public FrmConsulterPracticien(string mat)
+        {
+            InitializeComponent();
+            this.mat = mat;
+            bsPracticien.DataSource = VisiteurManager.ChargerPraticiens();
+            cbxPracticien.DataSource = bsPracticien;
+            cbxPracticien.DisplayMember = "PRA_NOM";
+            selectedPraticien = (PRATICIEN)cbxPracticien.SelectedItem;
+            ucPraticien1.LePraticien = selectedPraticien;
+        }
+        public FrmConsulterPracticien(string mat, PRATICIEN pra)
+        {
+            InitializeComponent();
+            this.mat = mat;
+            bsPracticien.DataSource = VisiteurManager.ChargerPraticiens();
+            cbxPracticien.DataSource = bsPracticien;
+            cbxPracticien.DisplayMember = "PRA_NOM";
+            cbxPracticien.SelectedIndex = cbxPracticien.Items.IndexOf(pra);
+            bsPracticien.Position = bsPracticien.IndexOf(bsPracticien.List.OfType<PRATICIEN>().ToList().Find(findPra => findPra.PRA_NUM == pra.PRA_NUM));
+            //selectedPraticien = pra;
+            //ucPraticien1.LePraticien = selectedPraticien;
+
         }
 
         private void cbxPracticien_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,7 +65,7 @@ namespace GSBCR.UI
 
         private void btnConsulter_Click(object sender, EventArgs e)
         {
-            FrmDetailPracticien f = new FrmDetailPracticien(selectedPraticien);
+            FrmDetailPracticien f = new FrmDetailPracticien(selectedPraticien, mat);
             f.Show();
         }
     }
