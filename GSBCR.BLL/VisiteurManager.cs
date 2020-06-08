@@ -310,6 +310,18 @@ namespace GSBCR.BLL
             }
         }
 
+        public static void CreateTravailler(TRAVAILLER v)
+        {
+            try
+            {
+                new TravaillerDAO().insert(v);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
 
     }

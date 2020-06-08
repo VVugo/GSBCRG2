@@ -48,11 +48,17 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.cbxSecteur = new System.Windows.Forms.ComboBox();
+            this.bsSecteur = new System.Windows.Forms.BindingSource(this.components);
             this.cbxLabo = new System.Windows.Forms.ComboBox();
             this.btnValider = new System.Windows.Forms.Button();
             this.btnQuitter = new System.Windows.Forms.Button();
-            this.bsSecteur = new System.Windows.Forms.BindingSource(this.components);
+            this.cbxTitre = new System.Windows.Forms.ComboBox();
+            this.lblTitre = new System.Windows.Forms.Label();
+            this.cbxRegion = new System.Windows.Forms.ComboBox();
+            this.lblRegion = new System.Windows.Forms.Label();
+            this.bsRegion = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsSecteur)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBoxMatricule
@@ -118,7 +124,7 @@
             // 
             this.txtBoxAdresse.Location = new System.Drawing.Point(207, 285);
             this.txtBoxAdresse.Name = "txtBoxAdresse";
-            this.txtBoxAdresse.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxAdresse.Size = new System.Drawing.Size(270, 22);
             this.txtBoxAdresse.TabIndex = 6;
             // 
             // lblCP
@@ -151,7 +157,7 @@
             // 
             this.txtBoxVille.Location = new System.Drawing.Point(207, 383);
             this.txtBoxVille.Name = "txtBoxVille";
-            this.txtBoxVille.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxVille.Size = new System.Drawing.Size(229, 22);
             this.txtBoxVille.TabIndex = 10;
             // 
             // lblMdp
@@ -175,7 +181,7 @@
             // lblSecteur
             // 
             this.lblSecteur.AutoSize = true;
-            this.lblSecteur.Location = new System.Drawing.Point(574, 117);
+            this.lblSecteur.Location = new System.Drawing.Point(574, 45);
             this.lblSecteur.Name = "lblSecteur";
             this.lblSecteur.Size = new System.Drawing.Size(57, 17);
             this.lblSecteur.TabIndex = 15;
@@ -184,7 +190,7 @@
             // LblLabo
             // 
             this.LblLabo.AutoSize = true;
-            this.LblLabo.Location = new System.Drawing.Point(566, 173);
+            this.LblLabo.Location = new System.Drawing.Point(566, 101);
             this.LblLabo.Name = "LblLabo";
             this.LblLabo.Size = new System.Drawing.Size(81, 17);
             this.LblLabo.TabIndex = 17;
@@ -212,12 +218,16 @@
             this.cbxSecteur.DataSource = this.bsSecteur;
             this.cbxSecteur.DisplayMember = "SEC_LIBELLE";
             this.cbxSecteur.FormattingEnabled = true;
-            this.cbxSecteur.Location = new System.Drawing.Point(652, 117);
+            this.cbxSecteur.Location = new System.Drawing.Point(652, 45);
             this.cbxSecteur.Name = "cbxSecteur";
             this.cbxSecteur.Size = new System.Drawing.Size(121, 24);
             this.cbxSecteur.TabIndex = 24;
             this.cbxSecteur.ValueMember = "SEC_CODE";
             this.cbxSecteur.SelectedIndexChanged += new System.EventHandler(this.cbxSecteur_SelectedIndexChanged);
+            // 
+            // bsSecteur
+            // 
+            this.bsSecteur.DataSource = typeof(GSBCR.modele.SECTEUR);
             // 
             // cbxLabo
             // 
@@ -225,7 +235,7 @@
             this.cbxLabo.Items.AddRange(new object[] {
             "SW",
             "GY"});
-            this.cbxLabo.Location = new System.Drawing.Point(652, 166);
+            this.cbxLabo.Location = new System.Drawing.Point(652, 94);
             this.cbxLabo.Name = "cbxLabo";
             this.cbxLabo.Size = new System.Drawing.Size(121, 24);
             this.cbxLabo.TabIndex = 26;
@@ -250,15 +260,60 @@
             this.btnQuitter.UseVisualStyleBackColor = true;
             this.btnQuitter.Click += new System.EventHandler(this.btnQuitter_Click);
             // 
-            // bsSecteur
+            // cbxTitre
             // 
-            this.bsSecteur.DataSource = typeof(GSBCR.modele.SECTEUR);
+            this.cbxTitre.FormattingEnabled = true;
+            this.cbxTitre.Items.AddRange(new object[] {
+            "Visiteur",
+            "Délégué"});
+            this.cbxTitre.Location = new System.Drawing.Point(652, 198);
+            this.cbxTitre.Name = "cbxTitre";
+            this.cbxTitre.Size = new System.Drawing.Size(121, 24);
+            this.cbxTitre.TabIndex = 30;
+            // 
+            // lblTitre
+            // 
+            this.lblTitre.AutoSize = true;
+            this.lblTitre.Location = new System.Drawing.Point(582, 201);
+            this.lblTitre.Name = "lblTitre";
+            this.lblTitre.Size = new System.Drawing.Size(37, 17);
+            this.lblTitre.TabIndex = 29;
+            this.lblTitre.Text = "Titre";
+            // 
+            // cbxRegion
+            // 
+            this.cbxRegion.DataSource = this.bsRegion;
+            this.cbxRegion.DisplayMember = "REG_NOM";
+            this.cbxRegion.FormattingEnabled = true;
+            this.cbxRegion.Location = new System.Drawing.Point(652, 143);
+            this.cbxRegion.Name = "cbxRegion";
+            this.cbxRegion.Size = new System.Drawing.Size(121, 24);
+            this.cbxRegion.TabIndex = 32;
+            this.cbxRegion.ValueMember = "REG_CODE";
+            // 
+            // lblRegion
+            // 
+            this.lblRegion.AutoSize = true;
+            this.lblRegion.Location = new System.Drawing.Point(574, 150);
+            this.lblRegion.Name = "lblRegion";
+            this.lblRegion.Size = new System.Drawing.Size(53, 17);
+            this.lblRegion.TabIndex = 31;
+            this.lblRegion.Text = "Region";
+            // 
+            // bsRegion
+            // 
+            this.bsRegion.DataSource = typeof(GSBCR.modele.REGION);
+            this.bsRegion.CurrentChanged += new System.EventHandler(this.bsRegion_CurrentChanged);
             // 
             // FrmResponsableCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(976, 566);
+            this.Controls.Add(this.cbxRegion);
+            this.Controls.Add(this.lblRegion);
+            this.Controls.Add(this.cbxTitre);
+            this.Controls.Add(this.lblTitre);
             this.Controls.Add(this.btnQuitter);
             this.Controls.Add(this.btnValider);
             this.Controls.Add(this.cbxLabo);
@@ -284,6 +339,7 @@
             this.Name = "FrmResponsableCreation";
             this.Load += new System.EventHandler(this.FrmResponsableCreation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsSecteur)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsRegion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,5 +370,10 @@
         private System.Windows.Forms.Button btnValider;
         private System.Windows.Forms.Button btnQuitter;
         private System.Windows.Forms.BindingSource bsSecteur;
+        private System.Windows.Forms.ComboBox cbxTitre;
+        private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.ComboBox cbxRegion;
+        private System.Windows.Forms.Label lblRegion;
+        private System.Windows.Forms.BindingSource bsRegion;
     }
 }

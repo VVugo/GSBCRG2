@@ -15,12 +15,15 @@ namespace GSBCR.UI
     public partial class FrmResponsableCreation : Form
     {
         private VISITEUR newVisiteur = new VISITEUR();
+        private TRAVAILLER newTravail = new TRAVAILLER();
 
         public FrmResponsableCreation()
         {
             InitializeComponent();
             bsSecteur.DataSource = VisiteurManager.GetSecteur();
+            bsRegion.DataSource = VisiteurManager.GetRegion();
             cbxLabo.SelectedIndex = 0;
+            cbxTitre.SelectedIndex = 0;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -71,13 +74,21 @@ namespace GSBCR.UI
                     newVisiteur.LAB_CODE = cbxLabo.SelectedItem.ToString();
                     newVisiteur.LesRapports = new List<RAPPORT_VISITE>();
                     newVisiteur.LesAffectations = new List<TRAVAILLER>();
+
+                    newTravail.VIS_MATRICULE = txtBoxMatricule.Text;
+                    newTravail.JJMMAA = dtpDate.Value;
+                    newTravail.REG_CODE = cbxRegion.SelectedValue.ToString();
+                    newTravail.TRA_ROLE = cbxTitre.SelectedItem.ToString();
+
+                    
                     VisiteurManager.CreateVisiteur(newVisiteur);
+                    VisiteurManager.CreateTravailler(newTravail);
                     MessageBox.Show("Visiteur crée", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception)
                 {
-
                     MessageBox.Show("Une erreur est survenue", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
                 }
                
             }
@@ -95,6 +106,11 @@ namespace GSBCR.UI
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void bsRegion_CurrentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
